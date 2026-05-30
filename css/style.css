@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Cafe24LovingU";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Lovingu.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header-title {
+  font-family: "Cafe24LovingU", cursive;
+  font-size: 50px;
+  font-weight: 500;
+  color: #fff;
+}
+.header-nav {
+  width: 100%;
+  display: grid;
+  grid-template: 1fr / repeat(4, 1fr);
+  margin-top: 10px;
+  gap: 10px;
+}
+.header-nav li:first-child {
+  background-color: #f5f1f1;
+}
+.header-nav li:last-child {
+  background-color: #9c9888;
+}
+.header-nav li:nth-child(2) {
+  background-color: #e7e3dd;
+}
+.header-nav li:nth-child(3) {
+  background-color: #cac5b1;
+}
+.header-nav-item {
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* .main {
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+} */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
