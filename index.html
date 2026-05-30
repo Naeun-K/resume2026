@@ -11,17 +11,17 @@
     <header class="header">
       <h1 class="header-title"><a href="#main">MyPortfolio</a></h1>
       <ul class="header-nav">
-        <li class="header-nav-item"><a href="#project">Projects</a></li>
-        <li class="header-nav-item"><a href="#tech">Skills</a></li>
-        <li class="header-nav-item">
-          <a href="#award-license">Awards&License</a>
-        </li>
-        <li class="header-nav-item"><a href="#contact">Contact</a></li>
+       <li class="header-nav-item"><a href="#tech"> Skills</a></li>
+       <li class="header-nav-item"><a href="#project">Projects</a></li>
+         <li class="header-nav-item"><a href="#award-license">
+        Awards&License
+        </a></li> 
+       <li class="header-nav-item"><a href="#contact">Contact</a></li>
       </ul>
     </header>
     <main class="main">
-      <div class="main-wrapper">
-      <section id="main" class="section section-main">
+      <div class="main-wrapper section">
+      <section id="main" class="section-main">
         <h2 class="sr-only">자기소개(About Me)</h2>
         <!-- <div class="section-main-wrapper"> -->
           <h2 class="section-main-title next-line">주니어 개발자
@@ -154,14 +154,17 @@ Developer </strong>
               </div>
             </div>  
           </section>
-          <section id="award-license" class="section section-award-license">
+          <div class="two-sections-wrapper section">
+            <section id="award-license" class="section-award-license">
             <h2 class="sr-only">상장 및 자격증 소개 공간</h2>
             <h3 class="section-award-license-title  small-title">Awards & Licenses</h3>
             <div class="award-license-wrapper">
               <div class="award-license-item">
-                <h4 class="award-license-title">상장 또는 자격증 제목</h4>
-                <p class="award-license-issuer">발급 기관</p>
-                <p class="award-license-date">발급 날짜</p>
+                <h4 class="award-license-title">SQL 개발자</h4>
+                <div class="award-license-info">
+                <p class="award-license-issuer">한국데이터산업진흥원</p>
+                <p class="award-license-date"><time datetime="2024-09-20">2024-09-20</time></p>
+              </div>
               </div>
               <div class="award-license-item">
                 <h4 class="award-license-title">상장 또는 자격증 제목</h4>
@@ -207,6 +210,7 @@ Developer </strong>
           <button type="submit" class="section-contact-button">보내기</button>
         </form>
       </section>
+      </div>
     </main>
   </body>
   </html>
