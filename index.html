@@ -11,23 +11,27 @@
     <header class="header">
       <h1 class="header-title"><a href="#main">MyPortfolio</a></h1>
       <ul class="header-nav">
-        <li class="header-nav-item"><a href="#contact">Contact</a></li>
         <li class="header-nav-item"><a href="#project">Projects</a></li>
         <li class="header-nav-item"><a href="#tech">Skills</a></li>
         <li class="header-nav-item">
-          <a href="#awards-license">Awards&License</a>
+          <a href="#award-license">Awards&License</a>
         </li>
+        <li class="header-nav-item"><a href="#contact">Contact</a></li>
       </ul>
     </header>
     <main class="main">
+      <div class="main-wrapper">
       <section id="main" class="section section-main">
         <h2 class="sr-only">자기소개(About Me)</h2>
-        <div class="section-main-wrapper">
-          <h2 class="section-main-title next-line">주니어 개발자 김나은</h2>
-        </div>
+        <!-- <div class="section-main-wrapper"> -->
+          <h2 class="section-main-title next-line">주니어 개발자
+김나은 </h2>
+        <!-- </div> -->
         <div class="section-main-english-wrapper">
           <p class="section-main-english-title">
-            <strong class="next-line"> Junior Full-Stack Developer </strong>
+          <strong class="next-line">Junior
+Full-Stack
+Developer </strong>
           </p>
           <div class="section-main-english-description">
             <p>
@@ -64,17 +68,15 @@
                 >GitHub</a
               >
             </p>
-          </div>
+          <!-- </div> -->
         </div>
       </section>
       <section class="section section-profile">
-        <h3 class="section-profile-title">Profile</h3>
-        <blockquote class="section-profile-motto">
-          <strong>
+        <h3 class="section-profile-title  small-title">Profile</h3>
+          <strong class="section-profile-motto">
             어제보다 더 나은 효율을 찾아 끊임없이 스펙트럼을 넓혀가는 개발자,
             김나은입니다
           </strong>
-        </blockquote>
         <p class="section-profile-description">
           저는 파이썬 판다스를 활용한 데이터분석부터 개발자로서의 역량을 키우기
           위해 다양한 프로젝트에 참여하며 경험을 쌓아왔습니다. 이후 JAVA,
@@ -93,22 +95,97 @@
           alt="profile image"
         />
       </div>
+      </div>
+      <section id="tech" class="section section-tech">
+        <h2 class="sr-only">기술 스택 소개 공간</h2>
+        <h3 class="section-tech-title small-title">Skills</h3>
+        <ul class="skill-list">
+          <li><p class="skill-name">HTML</p>
+            <div class="skill-bar">
+              <div class="skill-fill" ></div>
+            </div>
+          </li>
+          <li><p class="skill-name">CSS</p>
+            <div class="skill-bar">
+              <div class="skill-fill" ></div>
+            </div>
+          </li>
+          <li><p class="skill-name">Java</p>
+            <div class="skill-bar">
+              <div class="skill-fill" ></div>
+            </div>
+          </li>
+            <li><p class="skill-name">Oracle</p>
+              <div class="skill-bar">
+                <div class="skill-fill" ></div>
+              </div>
+            </li>
+            <li><p class="skill-name">Python</p>
+              <div class="skill-bar">
+                <div class="skill-fill" ></div>
+              </div>
+            </li>
+          </section>
+          <section id="project" class="section section-project">
+            <h2 class="sr-only">프로젝트 소개 공간</h2>
+            <h3 class="section-project-title  small-title">Projects</h3>
+            <div class="project-wrapper">
+              <div class="project-item">
+                <h4 class="project-title">프로젝트 제목</h4>
+                <div class="project-info">
+                  <p class="project-role">역할</p>
+                  <p class="project-period">기간</p>
+                </div>
+                <p class="project-description">
+                  프로젝트에 대한 간략한 설명이 들어갑니다. 프로젝트의 주요
+                  기능과 사용된 기술 스택을 간단히 소개합니다.
+                </p>
+              </div>
+              <div class="project-item">
+                <h4 class="project-title">프로젝트 제목</h4>
+                <div class="project-info">
+                  <p class="project-role">역할</p>
+                  <p class="project-period">기간</p>
+                </div>
+                <p class="project-description">
+                  프로젝트에 대한 간략한 설명이 들어갑니다. 프로젝트의 주요
+                  기능과 사용된 기술 스택을 간단히 소개합니다.
+                </p>
+              </div>
+            </div>  
+          </section>
+          <section id="award-license" class="section section-award-license">
+            <h2 class="sr-only">상장 및 자격증 소개 공간</h2>
+            <h3 class="section-award-license-title  small-title">Awards & Licenses</h3>
+            <div class="award-license-wrapper">
+              <div class="award-license-item">
+                <h4 class="award-license-title">상장 또는 자격증 제목</h4>
+                <p class="award-license-issuer">발급 기관</p>
+                <p class="award-license-date">발급 날짜</p>
+              </div>
+              <div class="award-license-item">
+                <h4 class="award-license-title">상장 또는 자격증 제목</h4>
+                <p class="award-license-issuer">발급 기관</p>
+                <p class="award-license-date">발급 날짜</p>
+              </div>
+            </div>
+          </section>
       <section id="contact" class="section section-contact">
         <h2 class="sr-only">메일로 연락할 수 있는 공간</h2>
-        <h3 class="section-contact-title">Contact</h3>
+        <h3 class="section-contact-title  small-title">Contact</h3>
         <form
-          class="section-contact-wrapper"
-          action="mailto:nek7148@gmail.com"
-          method="post"
+        class="section-contact-wrapper"
+        action="mailto:nek7148@gmail.com"
+        method="post"
         >
-          <label for="name" class="section-contact-label">이름</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            class="section-contact-input"
-            required
-            placeholder="이름을 입력하세요"
+        <label for="name" class="section-contact-label">이름</label>
+        <input
+        type="text"
+        id="name"
+        name="name"
+        class="section-contact-input"
+        required
+        placeholder="이름을 입력하세요"
           />
           <label for="title" class="section-contact-label">제목</label>
           <input
@@ -130,80 +207,7 @@
           <button type="submit" class="section-contact-button">보내기</button>
         </form>
       </section>
-      <section id="tech" class="section section-tech">
-        <h2 class="sr-only">기술 스택 소개 공간</h2>
-        <h3 class="section-tech-title">Skills</h3>
-          <ul class="skill-list">
-                <li><p class="skill-name">HTML</p>
-                <div class="skill-bar">
-                    <div class="skill-fill" ></div>
-                </div>
-            </li>
-            <li><p class="skill-name">CSS</p>
-                <div class="skill-bar">
-                    <div class="skill-fill" ></div>
-                </div>
-            </li>
-            <li><p class="skill-name">Java</p>
-                <div class="skill-bar">
-                    <div class="skill-fill" ></div>
-                </div>
-            </li>
-            <li><p class="skill-name">Oracle</p>
-                <div class="skill-bar">
-                    <div class="skill-fill" ></div>
-                </div>
-            </li>
-            <li><p class="skill-name">Python</p>
-                <div class="skill-bar">
-                    <div class="skill-fill" ></div>
-                </div>
-            </li>
-      </section>
-      <section id="award-license" class="section section-award-license">
-        <h2 class="sr-only">상장 및 자격증 소개 공간</h2>
-        <h3 class="section-award-license-title">Awards & Licenses</h3>
-        <div class="award-license-wrapper">
-          <div class="award-license-item">
-            <h4 class="award-license-title">상장 또는 자격증 제목</h4>
-            <p class="award-license-issuer">발급 기관</p>
-            <p class="award-license-date">발급 날짜</p>
-          </div>
-          <div class="award-license-item">
-            <h4 class="award-license-title">상장 또는 자격증 제목</h4>
-            <p class="award-license-issuer">발급 기관</p>
-            <p class="award-license-date">발급 날짜</p>
-          </div>
-        </div>
-      </section>
-      <section id="project" class="section section-project">
-        <h2 class="sr-only">프로젝트 소개 공간</h2>
-        <h3 class="section-project-title">Projects</h3>
-        <div class="project-wrapper">
-          <div class="project-item">
-            <h4 class="project-title">프로젝트 제목</h4>
-            <div class="project-info">
-              <p class="project-role">역할</p>
-              <p class="project-period">기간</p>
-            </div>
-            <p class="project-description">
-              프로젝트에 대한 간략한 설명이 들어갑니다. 프로젝트의 주요
-              기능과 사용된 기술 스택을 간단히 소개합니다.
-            </p>
-          </div>
-          <div class="project-item">
-            <h4 class="project-title">프로젝트 제목</h4>
-            <div class="project-info">
-              <p class="project-role">역할</p>
-              <p class="project-period">기간</p>
-            </div>
-            <p class="project-description">
-              프로젝트에 대한 간략한 설명이 들어갑니다. 프로젝트의 주요
-              기능과 사용된 기술 스택을 간단히 소개합니다.
-            </p>
-          </div>
-        </div>  
-      </section>
     </main>
   </body>
-</html>
+  </html>
+  
