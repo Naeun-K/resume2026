@@ -84,7 +84,10 @@ body {
   font-family: "Pretendard", sans-serif;
   color: #3b3c41;
 }
-
+.section {
+  width: 100%;
+  margin-bottom: 50px;
+}
 a {
   text-decoration: none;
   color: inherit;
