@@ -5,8 +5,53 @@
   font-weight: normal;
   font-display: swap;
 }
+
 .section {
-  padding-bottom: 40px;
+  margin-bottom: 130px;
+
+  opacity: 0;
+  transform: translateY(120px);
+  animation: riseUp 0.5s linear 0.5s both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 35%;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 20px 5px rgb(0 0 0/10%);
+}
+
+@keyframes riseUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btn {
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    background-color 0.5s ease;
+}
+.btn-letter {
+  transition: transform 0.5s ease;
+}
+.btn:hover {
+  transform: translateY(-5px);
+}
+.header-nav .btn:hover {
+  background-color: #f9f9f9;
+}
+.section-contact .btn:hover {
+  box-shadow: 0 10px 20px 5px rgb(0 0 0/20%);
+}
+.btn-letter:hover {
+  transform: translateY(-10px);
 }
 .header {
   display: flex;
@@ -141,7 +186,6 @@ svg {
   margin-bottom: 15px;
 }
 .skill-name {
-  font-family: "GangwonEducationModuche", sans-serif;
   width: 20%;
   text-align: center;
   font-size: 1.2rem;
@@ -157,7 +201,6 @@ svg {
   background-color: #f4f6f4;
   border-radius: 5px;
   box-shadow: 0 10px 20px 5px rgb(0 0 0/10%);
-  position: relative;
   font-weight: 600;
 }
 .skill-bar .skill-fill {

@@ -78,9 +78,13 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
-  background-color: #1b3022;
+  background: linear-gradient(135deg, #1b3022, #476d52);
   font-family: "Pretendard", sans-serif;
   color: #3b3c41;
 }
