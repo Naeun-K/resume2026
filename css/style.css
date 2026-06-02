@@ -250,6 +250,9 @@ svg,
 .section-profile {
   scroll-margin-top: 40px;
 }
+.section-project {
+  scroll-margin-top: 0;
+}
 .section-profile-wrapper {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -413,6 +416,11 @@ svg,
 .project-role::after {
   content: "|";
   margin-left: 10px;
+}
+.project-description {
+  font-size: 0.9rem;
+  color: #3b3c41;
+  white-space: pre-wrap;
 }
 .two-sections-wrapper {
   padding: 5px;
