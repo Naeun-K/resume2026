@@ -7,7 +7,7 @@
 }
 
 .section {
-  margin-bottom: 130px;
+  margin-top: 100px;
 
   opacity: 0;
   transform: translateY(120px);
@@ -45,12 +45,14 @@
   background-color: #f9f9f9;
   transform: translateY(8px) scale(1.05);
 }
-.section-contact .btn:hover {
-  box-shadow: 0 10px 20px 5px rgb(0 0 0/20%);
-  transform: translateY(-5px);
-}
 .btn-letter:hover {
   transform: scale(1.2);
+}
+.small-title {
+  text-transform: uppercase;
+  color: #1b3022;
+  font-size: 1.5rem;
+  padding-bottom: 15px;
 }
 .header {
   display: flex;
@@ -92,14 +94,31 @@
   border-radius: 5px;
   display: inline-block;
 }
-.next-line {
-  white-space: pre;
+
+.section-main-english-description .btn:hover {
+  box-shadow: 0 10px 20px 5px rgb(0 0 0/20%);
+  transform: translateY(-5px);
 }
-.small-title {
-  text-transform: uppercase;
-  color: #1b3022;
-  font-size: 1.5rem;
-  padding-bottom: 8px;
+.header-nav .btn:hover {
+  background-color: #f9f9f9;
+  transform: translateY(8px) scale(1.05);
+}
+.section-main-english-description .btn:hover,
+.section-contact .btn:hover {
+  box-shadow: 0 10px 20px 5px rgb(0 0 0/20%);
+  transform: translateY(-5px);
+}
+.section-main-english-description .btn:hover {
+  transform: scale(1.2);
+}
+.section-contact .btn:hover {
+  background-color: #476d52;
+}
+.btn-letter {
+  transition: transform 0.5s ease;
+}
+.btn-letter:hover {
+  transform: scale(1.2);
 }
 .main,
 .footer {
@@ -107,63 +126,92 @@
   background-color: #f9f9f9;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 0;
+}
+.main {
+  padding: 50px;
 }
 .main-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "title  img"
-    "phrase img";
-  gap: 70px;
-  padding-top: 20px;
+  margin-top: 50px;
+  padding: 30px;
+  background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  border-radius: 50px;
+  /* display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: "main img";
+  gap: 30px;
+  align-items: center; */
+}
+.section-main-wrapper {
+  /* grid-area: main; */
+  padding: 50px;
+  text-align: end;
+  position: relative;
 }
 .section-main {
   justify-self: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  grid-area: title;
 }
 .section-main-title {
   font-size: 3.5rem;
-  text-align: right;
+  /* text-align: right; */
   color: #1b3022;
-  border-right: 8px dashed #1b3022;
-  padding-right: 20px;
-  margin-top: 0;
-  padding-top: 0;
-}
-.section-main-english-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding-left: 20px;
+
+  /* padding-right: 20px; */
+  /* margin-top: 0; */
+  /* padding-top: 0; */
 }
 .section-main-english-title {
   font-size: 1.5rem;
-  color: #1b3022;
+  color: #f9f9f9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.section-main-wrapper::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 10px;
+  background-color: #1b3022;
+  margin-top: 10px;
+  /* text-align: end; */
+  position: absolute;
+  right: 50px;
 }
 .section-main-english-description {
-  font-size: 1rem;
-  color: #3b3c41;
+  margin-top: 40px;
+  display: flex;
+  gap: 50px;
+  font-weight: 500;
+  font-size: 1.2rem;
   max-width: 400px;
 }
-svg {
+.section-mail-desc,
+.section-github-desc {
+  background-color: #1b3022;
+  color: #fff;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+}
+svg,
+.section-profile-list-icon {
   margin-right: 10px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
 }
 .img-wrapper {
   grid-area: img;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
-.img-wrapper img {
+.img-wrapper img,
+.section-profile-img {
   border-radius: 30px;
-}
-.section-profile {
-  grid-area: phrase;
-  /* width: 100%; */
+  object-fit: cover;
 }
 .section-profile-typing-container {
   display: inline-block;
@@ -204,11 +252,48 @@ svg {
     border-color: transparent;
   }
 }
+.section-profile-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.section-profile-list {
+  padding: 20px;
+  line-height: 1.8;
+  justify-self: end;
+}
+.section-profile-list > li {
+  padding: 5px;
+  font-size: 1rem;
+  /* text-align: center; */
+}
+
+.section-profile--img-wrapper {
+  width: 200px;
+  height: 200px;
+}
+.section-profile-wrapper::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
 
 .section-profile-description {
+  /* width: 50%; */
   font-size: 1rem;
   color: #3b3c41;
   padding-top: 10px;
+}
+.section-tech-title {
+  /* font-size: 1.5rem;
+  color: #1b3022; */
+  padding-bottom: 20px;
 }
 .skill-list {
   display: flex;
@@ -268,7 +353,8 @@ svg {
 
 .project-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 50px;
   padding-top: 20px;
 }
@@ -344,7 +430,55 @@ svg {
   font-size: 1rem;
   border-radius: 10px;
 }
+.floating-icon {
+  /* 1. 화면에 고정하는 핵심 속성 */
+  position: fixed;
+  bottom: 50px; /* 화면 아래에서부터의 거리 */
+  right: 180px; /* 화면 오른쪽에서부터의 거리 */
 
+  /* 2. 아이콘을 보기 좋게 꾸미는 스타일 (원하는 대로 수정 가능) */
+  width: 60px;
+  height: 60px;
+  background-color: #1b3022; /* 배경 색상 */
+  color: #fff; /* 아이콘/글자 색상 */
+  border-radius: 50%; /* 동그라미 모양으로 만들기 */
+
+  /* 3. 내부 아이콘을 가운데로 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+
+  /* 4. 마우스를 올렸을 때 클릭할 수 있음을 보여줌 */
+  cursor: pointer;
+
+  /* 5. 다른 컨텐츠에 가려지지 않도록 최상단으로 올림 */
+  z-index: 9999;
+
+  /* 부드러운 그림자 효과 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* 마우스를 올렸을 때 살짝 흐려지거나 커지는 효과 (선택사항) */
+.floating-icon:hover {
+  background-color: #476d52;
+  transform: scale(1.1);
+}
+.floating-icon-link svg {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0;
+}
 .footer::before {
   content: "";
   display: block;
@@ -357,6 +491,12 @@ svg {
   text-align: center;
   color: #3b3c41;
   font-size: 0.9rem;
+}
+.footer-credit {
+  text-align: center;
+  color: #3b3c41;
+  font-size: 0.6rem;
+  margin-top: 5px;
 }
 .sr-only {
   position: absolute;
