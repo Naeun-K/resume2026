@@ -95,6 +95,11 @@
   border-radius: 5px;
   display: inline-block;
 }
+.header-nav-item a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 .section-main-english-description .btn:hover {
   box-shadow: 0 10px 20px 5px rgb(0 0 0/20%);
@@ -136,11 +141,6 @@
   padding: 30px;
   background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   border-radius: 50px;
-  /* display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-areas: "main img";
-  gap: 30px;
-  align-items: center; */
 }
 .section-main-wrapper {
   /* grid-area: main; */
@@ -426,10 +426,9 @@ svg,
 }
 .two-sections-wrapper {
   padding: 5px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: space-around;
-  gap: 30px;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
   scroll-margin-top: 0;
 }
 .award-license-item {
@@ -450,6 +449,10 @@ svg,
 .award-license-description {
   font-size: 1rem;
   color: #3b3c41;
+}
+.section-award-license,
+.section-contact {
+  flex: 1;
 }
 .section-contact-wrapper {
   display: flex;
