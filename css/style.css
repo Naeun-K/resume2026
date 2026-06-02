@@ -214,30 +214,34 @@ svg,
 }
 
 .section-profile-typing-container > strong {
-  font-family: "monospace", sans-serif;
-  font-size: 1.2rem;
+  --chars: 24; /* fallback, will be set by script */
+  display: inline-block;
+  font-family: "monospace", monospace;
+  font-size: 1.5rem;
   color: #1b3022;
   margin-top: 10px;
   margin-bottom: 10px;
 
-  width: 0;
   white-space: nowrap; /* 줄바꿈 금지 */
   overflow: hidden; /* 넘치는 텍스트 숨김 */
-  border-right: 0.1rem solid #1b3022; /* 커서 효과 */
+  border-right: 0.12rem solid #1b3022; /* 커서 효과 */
+  width: 0ch;
+}
 
-  /* 애니메이션 적용: 3초 동안, 15단계(글자수)로, 무한 반복 */
+/* activate typing by adding .typing-active to the strong element */
+.section-profile-typing-container > strong.typing-active {
   animation:
-    typing 3s steps(23) infinite,
-    caret 0.5s step-end infinite;
+    typing calc(var(--chars) * 0.08s) steps(var(--chars), end) 0.45s forwards,
+    caret 0.7s step-end infinite;
 }
 
 /* 타이핑 애니메이션: 너비를 0에서 100%로 */
 @keyframes typing {
   from {
-    width: 0;
+    width: 0ch;
   }
   to {
-    width: 100%;
+    width: calc(var(--chars) * 1ch);
   }
 }
 
@@ -250,9 +254,7 @@ svg,
 .section-profile {
   scroll-margin-top: 40px;
 }
-.section-project {
-  scroll-margin-top: 0;
-}
+
 .section-profile-wrapper {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -430,11 +432,8 @@ svg,
   gap: 30px;
   scroll-margin-top: 0;
 }
-.award-license-wrapper {
-  padding-top: 5px;
-}
 .award-license-item {
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 .award-license-info {
   display: flex;
