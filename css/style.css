@@ -12,7 +12,7 @@
 
   opacity: 0;
   transform: translateY(120px);
-  animation: riseUp 0.5s linear 0.5s both;
+  animation: riseUp 0.25s linear both;
   animation-timeline: view();
   animation-range: entry 10% cover 35%;
 }
@@ -199,14 +199,23 @@
   padding-right: 20px;
   border-radius: 30px;
 }
-svg,
+.section-profile-list svg,
 .section-profile-list-icon {
   margin-right: 10px;
   width: 20px;
   height: 20px;
   vertical-align: middle;
 }
-
+.project-description svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 5px;
+  /* baseline; */
+}
+.project-tech-context::before {
+  content: "- ";
+}
 .section-profile-img {
   border-radius: 50px;
   object-fit: cover;
@@ -240,7 +249,7 @@ svg,
 /* activate typing by adding .typing-active to the strong element */
 .section-profile-typing-container > strong.typing-active {
   animation:
-    typing 3.5s steps(30) forwards infinite,
+    typing 3.8s steps(30) forwards infinite,
     caret 0.7s step-end infinite;
 }
 
@@ -341,7 +350,11 @@ svg,
   border-radius: 5px;
   box-shadow: 0 10px 20px 5px rgb(0 0 0/10%);
   font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
 .skill-bar .skill-fill {
   height: 100%;
   padding: 0;
@@ -351,54 +364,16 @@ svg,
   border-radius: 5px;
   transition: width 0.5s ease;
   position: relative;
-  cursor: help;
+  /* cursor: pointer; */
 }
+
+/* .skill-bar .skill-fill::before {
+  display: none;
+}
+
 .skill-bar .skill-fill::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  left: auto;
-  transform: none;
-  white-space: nowrap;
-  padding: 6px 10px;
-  font-size: 0.85rem;
-  line-height: 1.2;
-  color: #fff;
-  background-color: #1b3022;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 10;
-  transition:
-    opacity 0.2s ease,
-    visibility 0.2s ease;
-}
-.skill-bar .skill-fill::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  right: 10px;
-  left: auto;
-  transform: none;
-  border-width: 6px;
-  border-style: solid;
-  border-color: #1b3022 transparent transparent transparent;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 10;
-  transition:
-    opacity 0.2s ease,
-    visibility 0.2s ease;
-}
-.skill-bar .skill-fill:hover::before,
-.skill-bar .skill-fill:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
+  display: none;
+} */
 .skill-fill-html {
   width: 80%;
 }
@@ -406,15 +381,41 @@ svg,
   width: 70%;
 }
 .skill-fill-java {
-  width: 70%;
+  width: 80%;
 }
 .skill-fill-oracle {
-  width: 80%;
+  width: 85%;
 }
 .skill-fill-python {
   width: 90%;
 }
 
+.skill-fill::after {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f9f9f9;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.skill-fill-html::after {
+  content: "80%";
+}
+.skill-fill-css::after {
+  content: "70%";
+}
+.skill-fill-java::after {
+  content: "80%";
+}
+.skill-fill-oracle::after {
+  content: "85%";
+}
+.skill-fill-python::after {
+  content: "90%";
+}
 .project-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -427,6 +428,10 @@ svg,
   gap: 10px;
   padding: 10px 0 10px 20px;
   font-size: 0.9rem;
+}
+.mobile-array {
+  display: flex;
+  gap: 10px;
 }
 
 .project-period::before {
@@ -446,6 +451,7 @@ svg,
   display: flex;
   flex-direction: column;
   height: fit-content;
+  word-break: keep-all;
 }
 .project-description > li {
   padding-left: 20px;
@@ -589,10 +595,16 @@ svg,
   font-size: 0.9rem;
 }
 .footer-credit {
-  text-align: center;
   color: #3b3c41;
   font-size: 0.6rem;
   margin-top: 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.footer-credit-icons8::after {
+  content: "|";
+  margin-left: 5px;
 }
 @media (320px<=width<768px) {
   .main-wrapper {
@@ -626,13 +638,17 @@ svg,
   .section-main-title {
     font-size: 2.3rem;
     padding: 0;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
+    word-break: keep-all;
     color: #f9f9f9;
     height: fit-content;
     padding: 5px 0;
+    /* text-align: start; */
   }
   .section-main-english-title {
-    white-space: pre-wrap;
+    /* text-align: start; */
+    word-break: keep-all;
+    /* white-space: pre-wrap; */
     padding-top: 15px;
     font-size: 1.2rem;
     padding: 10px;
@@ -645,10 +661,8 @@ svg,
     display: none;
   }
   .section-main-english-description {
-    gap: 50px;
     margin-top: 0;
-    justify-items: center;
-    align-items: center;
+    justify-items: space-between;
   }
   .section-mail-desc,
   .section-github-desc {
@@ -692,6 +706,7 @@ svg,
   .skill-list {
     padding: 0;
   }
+
   .project-wrapper {
     padding: 10px;
     /* grid-template-columns: 1fr;
@@ -703,24 +718,19 @@ svg,
     gap: 40px;
   }
   .project-info {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    grid-template-rows: 0.5fr 1fr;
-    grid-template-areas:
-      "role role"
-      "count period";
+    display: flex;
+    /* grid-template-columns: max-content max-content; */
+    /* grid-template-rows: 0.5fr 1fr; */
+    /* grid-template-areas: */
+    /* "role role" */
+    /* "count period"; */
+    flex-direction: column;
     gap: 0;
     padding-left: 10px;
     font-size: 0.9rem;
   }
-  .project-role {
-    grid-area: role;
-  }
-  .project-count {
-    grid-area: count;
-  }
-  .project-period {
-    grid-area: period;
+  .mobile-array {
+    gap: 0;
   }
   .project-role::after {
     display: none;
@@ -737,7 +747,8 @@ svg,
   .project-description {
     font-size: 0.9rem;
     color: #3b3c41;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
+
     padding-left: 15px;
   }
   .two-sections-wrapper {
@@ -751,7 +762,8 @@ svg,
     color: #1b3022;
     padding: 10px 0;
 
-    white-space: pre-wrap;
+    white-space: normal;
+    word-break: keep-all;
     overflow: visible;
     border-right: none;
     width: auto;
