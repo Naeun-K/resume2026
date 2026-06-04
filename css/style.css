@@ -131,6 +131,7 @@
   padding: 30px;
   background-color: #f9f9f9;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 .main {
@@ -231,7 +232,8 @@ svg,
 /* activate typing by adding .typing-active to the strong element */
 .section-profile-typing-container > strong.typing-active {
   animation:
-    typing calc(var(--chars) * 0.08s) steps(var(--chars), end) 0.45s forwards,
+    typing calc(var(--chars) * 0.08s) steps(var(--chars), end) 1.5s forwards
+      infinite,
     caret 0.7s step-end infinite;
 }
 
@@ -560,6 +562,41 @@ svg,
   color: #3b3c41;
   font-size: 0.6rem;
   margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .main,
+  .footer {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .main,
+  .footer {
+    width: 100%;
+    padding: 2rem;
+  }
+  .info-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 8px;
+  }
+  .section-main-english-title {
+    padding-top: 35px;
+    color: #1b3022;
+  }
+  .project-wrapper {
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    padding-top: 20px;
+    gap: 10px;
+  }
+  .section-profile,
+  .section-project {
+    scroll-margin-top: 0;
+  }
 }
 .sr-only {
   position: absolute;
