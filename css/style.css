@@ -416,6 +416,7 @@ svg,
 .project-info {
   display: flex;
   gap: 10px;
+  padding-left: 20px;
 }
 .project-role::after {
   content: "|";
@@ -563,14 +564,149 @@ svg,
   font-size: 0.6rem;
   margin-top: 5px;
 }
-@media (max-width: 768px) {
+@media (320px<=width<=767px) {
+  .main-wrapper {
+    background-image: url(https://images.unsplash.com/photo-1568716353609-12ddc5c67f04?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDQyfHxjb2Rpbmd8ZW58MHx8MHx8fDI%3Dhttps://images.unsplash.com/photo-1669052700037-db884b37b2d9?q=80&w=1054&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  }
+  .section {
+    scroll-margin-top: 50px;
+    margin-top: 30px;
+  }
+  .header-nav {
+    gap: 0;
+  }
+  .header-nav-item a {
+    font-size: 0.8rem;
+  }
+  .award-license-info {
+    flex-direction: column;
+    gap: 0;
+    padding: 5px 0 5px 3.5px;
+  }
   .main,
   .footer {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0.5rem;
+  }
+  .section-main-title {
+    font-size: 2.3rem;
+    padding: 0;
+    white-space: pre-wrap;
+    color: #f9f9f9;
+    height: fit-content;
+  }
+  .section-main-english-title {
+    white-space: pre-wrap;
+    padding-top: 15px;
+    font-size: 1.2rem;
+    padding: 10px;
+    height: fit-content;
+  }
+  .section-main-wrapper::after {
+    /* content: ""; */
+    display: none;
+  }
+  .section-main-english-description {
+    /* flex-direction: column; */
+    gap: 10px;
+    /* font-weight: 500; */
+    font-size: 1.05rem;
+    margin-top: 0;
+  }
+  .section-mail-desc,
+  .section-github-desc {
+    background-color: #f9f9f9;
+    color: #1b3022;
+    padding: 10px 20px;
+  }
+  .two-sections-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+  }
+  .section-profile-typing-container > strong {
+    font-family: "Pretendard", sans-serif;
+    font-size: 1.5rem;
+    color: #1b3022;
+    padding: 10px 0;
+
+    white-space: pre-wrap;
+    overflow: visible; /* 전체 텍스트 표시 */
+    border-right: none; /* 커서 효과 제거 */
+    width: auto; /* 애니메이션 폭 제한 제거 */
+  }
+
+  .section-profile-typing-container > strong.typing-active {
+    animation: none; /* 애니메이션 제거 */
+    transform: none; /* 혹시 모를 위치 이동 효과도 리셋 */
+    transition: none; /* 부드러운 전환 효과도 리셋 */
+  }
+  svg,
+  .section-profile-list-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+
+  .section-profile--img-wrapper,
+  .section-profile-img {
+    /* display: none; */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .section-profile-wrapper {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .section-profile-list > li {
+    font-size: 1rem;
+  }
+  .section-profile-list {
+    padding: 0;
+    margin: 0;
+    flex: 1;
+  }
+  svg,
+  .section-profile-list-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .project-wrapper {
+    /* justify-items: center; */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    padding-top: 20px;
+    padding-left: 40px;
+    gap: 10px;
+  }
+  .section-profile,
+  .section-project {
+    scroll-margin-top: 0;
+  }
+  .floating-icon {
+    bottom: 15px; /* 화면 아래에서부터의 거리 */
+    right: 15px; /* 화면 오른쪽에서부터의 거리 */
+
+    /* 2. 아이콘을 보기 좋게 꾸미는 스타일 (원하는 대로 수정 가능) */
+    width: 50px;
+    height: 50px;
+  }
+  .floating-icon svg {
+    width: 30px;
+    height: 30px;
   }
 }
-@media (max-width: 1024px) {
+
+@media (768px<=width<= 1024px) {
   .main,
   .footer {
     width: 100%;
@@ -587,10 +723,11 @@ svg,
     color: #1b3022;
   }
   .project-wrapper {
-    justify-items: center;
+    /* justify-items: center; */
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
     padding-top: 20px;
+    padding-left: 40px;
     gap: 10px;
   }
   .section-profile,
