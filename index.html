@@ -1,27 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>김나은 | 풀스택 개발자 포트폴리오</title>
+    <meta
+      name="description"
+      content="풀스택 개발자 김나은의 포트폴리오. Python, Java, Oracle, 웹 백엔드 및 데이터 분석 프로젝트 경험을 담았습니다."
+    />
+    <meta
+      name="keywords"
+      content="풀스택 개발자, 포트폴리오, Python, Java, Oracle, 데이터 분석, 웹 개발"
+    />
+    <meta name="theme-color" content="#1b3022" />
+    <meta property="og:title" content="김나은 | 풀스택 개발자 포트폴리오" />
+    <meta
+      property="og:description"
+      content="Python, Java, Oracle 기반 프로젝트와 웹 백엔드 경험을 중심으로 한 포트폴리오 이력서."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="header-title btn-letter"><a href="#main">MyPortfolio</a></h1>
-      <ul class="header-nav">
-        <li class="header-nav-item btn"><a href="#about">About</a></li>
-        <li class="header-nav-item btn"><a href="#tech"> Skills</a></li>
-        <li class="header-nav-item btn"><a href="#project">Projects</a></li>
-        <li class="header-nav-item btn">
-          <a href="#award-license"> Awards&License </a>
-        </li>
-      </ul>
+      <h1 class="header-title btn-letter">
+        <a href="#hero">MyPortfolio</a>
+      </h1>
+      <nav class="header-navigation" aria-label="페이지 탐색">
+        <ul class="header-nav">
+          <li class="header-nav-item btn"><a href="#about">About</a></li>
+          <li class="header-nav-item btn"><a href="#tech">Skills</a></li>
+          <li class="header-nav-item btn"><a href="#project">Projects</a></li>
+          <li class="header-nav-item btn">
+            <a href="#award-license"
+              >Awards<span class="mobile-spacer"> </span>&<span
+                class="mobile-spacer"
+              >
+              </span
+              >License</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
     <main class="main">
       <div class="main-wrapper section">
-        <section id="main" class="section-main">
+        <section id="hero" class="section-main">
           <h2 class="sr-only">자기소개(About Me)</h2>
           <div class="section-main-wrapper">
             <h2 class="section-main-title">풀스택 개발자 김나은</h2>
@@ -32,6 +58,8 @@
           <div class="section-main-english-description">
             <a href="#contact" class="section-mail-desc btn">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -48,9 +76,12 @@
             <a
               href="https://github.com/Naeun-K/resume2026"
               target="_blank"
+              rel="noopener noreferrer"
               class="section-github-desc btn"
             >
               <svg
+                aria-hidden="true"
+                focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -77,6 +108,8 @@
           <ul class="section-profile-list">
             <li class="section-profile-list-name">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -95,13 +128,16 @@
             <li class="section-profile-list-item">
               <img
                 src="images/mbti.webp"
-                alt="MBTI 아이콘"
+                alt=""
+                loading="lazy"
                 class="section-profile-list-icon"
               />
               INTP
             </li>
             <li class="section-profile-list-item">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -117,6 +153,8 @@
             </li>
             <li class="section-profile-list-item">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -132,6 +170,8 @@
             </li>
             <li class="section-profile-list-item">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -150,7 +190,8 @@
             <img
               class="section-profile-img"
               src="images/profile.webp"
-              alt="profile image"
+              alt="김나은 프로필 사진"
+              loading="lazy"
             />
           </div>
         </div>
@@ -216,15 +257,18 @@
             </div>
             <ul class="project-description">
               <li>수치데이터를 다양한 경우의 수에 따라 분석하여 시각화</li>
-              <!-- <li>Python Pandas 라이브러리를 활용해 데이터 분석 수행</li> -->
               <li>
                 데이터 분석 수행 후 엑셀파일로 자동 저장하는 프로그램 개발
               </li>
               <li>프로그램에 대한 메뉴얼 작성</li>
               <li>
                 사용기술:
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
                   <path
                     d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2l-40.1 0 0 47.4c0 36.8-31.2 67.8-66.8 67.8l-106.8 0c-29.2 0-53.4 25-53.4 54.3l0 101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3l0-40.7-106.7 0 0-13.6 160.2 0c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7zM167.8 248.1l106.8 0c29.7 0 53.4-24.5 53.4-54.3l0-101.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6l0 40.7 106.9 0 0 13.6-147 0c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2l36.7 0 0-48.8c0-35.3 30.5-66.4 66.8-66.4zM161.2 64.7a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8z"
                   />
@@ -251,8 +295,12 @@
               <li>프로그램에 대한 메뉴얼 작성</li>
               <li>
                 사용기술:
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
                   <path
                     d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2l-40.1 0 0 47.4c0 36.8-31.2 67.8-66.8 67.8l-106.8 0c-29.2 0-53.4 25-53.4 54.3l0 101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3l0-40.7-106.7 0 0-13.6 160.2 0c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7zM167.8 248.1l106.8 0c29.7 0 53.4-24.5 53.4-54.3l0-101.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6l0 40.7 106.9 0 0 13.6-147 0c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2l36.7 0 0-48.8c0-35.3 30.5-66.4 66.8-66.4zM161.2 64.7a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8z"
                   />
@@ -277,8 +325,12 @@
               <li>프로그램에 대한 메뉴얼 작성</li>
               <li>
                 사용기술:
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
                   <path
                     d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2l-40.1 0 0 47.4c0 36.8-31.2 67.8-66.8 67.8l-106.8 0c-29.2 0-53.4 25-53.4 54.3l0 101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3l0-40.7-106.7 0 0-13.6 160.2 0c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7zM167.8 248.1l106.8 0c29.7 0 53.4-24.5 53.4-54.3l0-101.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6l0 40.7 106.9 0 0 13.6-147 0c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2l36.7 0 0-48.8c0-35.3 30.5-66.4 66.8-66.4zM161.2 64.7a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8z"
                   />
@@ -309,21 +361,31 @@
               <li>Pandas와 Web 연결</li>
               <li>
                 사용기술:
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
                   <path
                     d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2l-40.1 0 0 47.4c0 36.8-31.2 67.8-66.8 67.8l-106.8 0c-29.2 0-53.4 25-53.4 54.3l0 101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3l0-40.7-106.7 0 0-13.6 160.2 0c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7zM167.8 248.1l106.8 0c29.7 0 53.4-24.5 53.4-54.3l0-101.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6l0 40.7 106.9 0 0 13.6-147 0c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2l36.7 0 0-48.8c0-35.3 30.5-66.4 66.8-66.4zM161.2 64.7a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8z"
                   />
                 </svg>
                 <span class="sr-only">python</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                >
                   <path
                     d="M277.8 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8 103.7-81.8 50.5-135 50.5-135 21.5 84.5-75.6 110.1-110.7 162.6-23.9 35.9 11.7 74.4 60.2 118.2zM307 104.6c.1 0-175.2 43.8-91.5 140.2 24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9C216 188.1 195.4 169.3 307 104.6zm-6.1 270.5c-.5 1-1.2 1.8-2 2.6 128.3-33.7 81.1-118.9 19.8-97.3-3.3 1.2-6.2 3.4-8.2 6.3 3.6-1.3 7.3-2.3 11-3 31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6 .7-18.3-7.9 16-19 26.8-21.3 11.2-2.4 17.7-2 17.7-2-20.3-14.3-131.3 28.1-56.4 40.2 204.2 33.2 372.4-14.9 319.4-38.8zM124.5 396c-78.7 22 47.9 67.4 148.1 24.5-9.8-3.8-19.2-8.4-28.2-13.8-44.7 8.5-65.4 9.1-106 4.5-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6 0-.1 11.8 9.7 72.4 13.6 92.2 5.9 233.8-3.3 237.1-46.9 0 0-6.4 16.5-76.2 29.7zM260.7 353c-59.2 11.4-93.5 11.1-136.8 6.6-33.5-3.5-11.6-19.7-11.6-19.7-86.8 28.8 48.2 61.4 169.5 25.9-7.8-2.8-15-7.1-21.1-12.8z"
                   />
                 </svg>
                 <span class="sr-only">Java</span>
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   fill="#000000"
                   viewBox="0 0 32 32"
                   version="1.1"
@@ -343,15 +405,23 @@
                   </g>
                 </svg>
                 <span class="sr-only">Flask</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
                   <path
                     d="M448 96c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5l0-143.1 42.1 0 0 143.7c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6-39.1 0-64.4-18.6-76.7-43z"
                   />
                 </svg>
                 <span class="sr-only">JavaScript</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
                   <path
                     d="M448 205.8c-14.8 9.8-31.8 17.7-49.5 24-47 16.8-108.7 26.2-174.5 26.2S96.4 246.5 49.5 229.8c-17.6-6.3-34.7-14.2-49.5-24L0 288c0 44.2 100.3 80 224 80s224-35.8 224-80l0-82.2zm0-77.8l0-48C448 35.8 347.7 0 224 0S0 35.8 0 80l0 48c0 44.2 100.3 80 224 80s224-35.8 224-80zM398.5 389.8C351.6 406.5 289.9 416 224 416S96.4 406.5 49.5 389.8c-17.6-6.3-34.7-14.2-49.5-24L0 432c0 44.2 100.3 80 224 80s224-35.8 224-80l0-66.2c-14.8 9.8-31.8 17.7-49.5 24z"
                   />
@@ -414,6 +484,7 @@
             action="mailto:nek7148@gmail.com"
             method="post"
             enctype="text/plain"
+            aria-label="연락처 메일 작성 양식"
           >
             <label for="name" class="section-contact-label">이름</label>
             <input
@@ -450,6 +521,8 @@
       <div class="floating-icon">
         <a href="#header" class="floating-icon-link">
           <svg
+            aria-hidden="true"
+            focusable="false"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
