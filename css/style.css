@@ -426,8 +426,10 @@ textarea:focus-visible {
   gap: 10px;
   padding: 10px 0 10px 20px;
   font-size: 0.9rem;
+  flex-wrap: wrap;
 }
 .mobile-array {
+  flex-wrap: nowrap;
   display: flex;
   gap: 10px;
 }
