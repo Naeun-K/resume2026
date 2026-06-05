@@ -69,7 +69,7 @@
   font-weight: 900;
   font-display: swap;
 }
-
+/* 접근성 이슈로  애니메이션 reduce css 적용 */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -80,7 +80,7 @@
     scroll-behavior: auto;
   }
 }
-
+/* ------------추후 스타일 적용을 위한 기본 세팅 ----------------- */
 *,
 *::before,
 *::after {
@@ -88,34 +88,34 @@
   margin: 0;
   padding: 0;
 }
-
+/* 스크롤 부드럽게 & a태그 이동시 상위부분 잘리지 않게 css 적용 */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
 }
-
+/* 바디태그 전체 적용 : 글자간격, 바탕색, 폰트, 글자색 */
 body {
   line-height: 1.6;
   background: linear-gradient(135deg, #1b3022, #476d52);
   font-family: "Pretendard", sans-serif;
   color: #3b3c41;
 }
-.section {
-  width: 100%;
-  margin-bottom: 50px;
-}
+/* a태그 기본적용 : 아래 밑줄 삭제, 글자색 상속 */
 a {
   text-decoration: none;
   color: inherit;
 }
+/* ul태그 기본적용 : 리스트 스타일 없음 */
 ul {
   list-style: none;
 }
+/* img태그 기본적용 : 넓이 높이 모두 부모 상속 */
 img {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
+/* button, input, textarea 기본적용 : 폰트 상속 */
 button,
 input,
 textarea {
