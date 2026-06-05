@@ -5,8 +5,9 @@
   font-weight: normal;
   font-display: swap;
 }
-
+/* ---------- layout --------------- */
 .section {
+  width: 100%;
   scroll-margin-top: 100px;
   margin-top: 90px;
 
@@ -23,6 +24,13 @@
   box-shadow: 0 10px 20px 5px rgb(0 0 0/10%);
 }
 
+.small-title {
+  text-transform: uppercase;
+  color: #1b3022;
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+}
+/* -- 스크롤 다운 시 부드럽게 올라오는 애니메이션 -- */
 @keyframes riseUp {
   from {
     opacity: 0;
@@ -33,6 +41,7 @@
     transform: translateY(0);
   }
 }
+/* -- 버튼 애니메이션 추가 -- */
 .btn {
   transition:
     transform 0.5s ease,
@@ -68,12 +77,7 @@ textarea:focus-visible {
 .section-contact .btn:hover {
   background-color: #476d52;
 }
-.small-title {
-  text-transform: uppercase;
-  color: #1b3022;
-  font-size: 1.5rem;
-  padding-bottom: 15px;
-}
+/* -------------------헤더 ------------------------ */
 .header {
   display: flex;
   flex-direction: column;
@@ -125,7 +129,7 @@ textarea:focus-visible {
   height: 100%;
   display: block;
 }
-
+/*----------------------- 메인 --------------------------*/
 .main,
 .footer {
   padding: 30px;
@@ -137,6 +141,7 @@ textarea:focus-visible {
 .main {
   padding: 50px;
 }
+/* --------------히어로---------------------- */
 .main-wrapper {
   margin-top: 50px;
   padding: 30px;
@@ -199,14 +204,6 @@ textarea:focus-visible {
   width: 16px;
   height: 16px;
 }
-.floating-icon-link {
-  display: inline-flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  color: inherit;
-}
 
 .section-mail-desc,
 .section-github-desc {
@@ -217,6 +214,7 @@ textarea:focus-visible {
   padding-right: 20px;
   border-radius: 30px;
 }
+/* ------------------ 프로필(About)---------------- */
 .section-profile-list svg,
 .section-profile-list-icon {
   margin-right: 10px;
@@ -259,7 +257,7 @@ textarea:focus-visible {
     typing 3.8s steps(30) forwards infinite,
     caret 0.7s step-end infinite;
 }
-
+/*-- 타이핑 효과 애니메이션 -- */
 @keyframes typing {
   from {
     width: 0%;
@@ -317,6 +315,7 @@ textarea:focus-visible {
   color: #3b3c41;
   padding-top: 10px;
 }
+/* ------------------------스킬 막대그래프---------------------- */
 .section-tech-title {
   padding-bottom: 20px;
 }
@@ -407,6 +406,7 @@ textarea:focus-visible {
 .skill-fill-python::after {
   content: "90%";
 }
+/* --------------------------프로젝트 설명칸------------------------ */
 .project-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -454,6 +454,7 @@ textarea:focus-visible {
   margin: 0;
   margin-right: 10px;
 }
+/* contact와 awards & licences 두개 묶음 */
 .two-sections-wrapper {
   padding: 5px;
   display: flex;
@@ -461,6 +462,7 @@ textarea:focus-visible {
   gap: 40px;
   scroll-margin-top: 0;
 }
+/* --------------------------- 상과 자격증 ----------------------- */
 .award-license-item {
   padding-bottom: 20px;
 }
@@ -488,6 +490,7 @@ textarea:focus-visible {
 .section-contact {
   flex: 1;
 }
+/* ------------------------연락칸---------------------- */
 .section-contact-wrapper {
   display: flex;
   flex-direction: column;
@@ -523,6 +526,7 @@ textarea:focus-visible {
   font-size: 1rem;
   border-radius: 10px;
 }
+/* 플로팅 아이콘 ------ 탑으로 이동 */
 .floating-icon {
   position: fixed;
   bottom: 30px;
@@ -547,6 +551,14 @@ textarea:focus-visible {
   background-color: #629671;
   transform: scale(1.1);
 }
+.floating-icon-link {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
 .floating-icon-link svg {
   width: 50px;
   height: 50px;
@@ -554,6 +566,7 @@ textarea:focus-visible {
   text-align: center;
   margin: 0;
 }
+/* -------------------------푸터------------------------- */
 .footer::before {
   content: "";
   display: block;
@@ -579,6 +592,7 @@ textarea:focus-visible {
   content: "|";
   margin-left: 5px;
 }
+/* -----------------미디어 쿼리(모바일버전)------------------ */
 @media (min-width: 320px) and (max-width: 767px) {
   .main-wrapper {
     background-image: url(https://images.unsplash.com/photo-1669052700037-db884b37b2d9?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
@@ -790,7 +804,7 @@ textarea:focus-visible {
     animation-range: entry 10% cover 35%;
   }
 }
-
+/* ---------------------미디어쿼리(태블릿버전)----------------------- */
 @media (min-width: 768px) and (max-width: 1023px) {
   .main,
   .footer {
@@ -817,6 +831,7 @@ textarea:focus-visible {
     scroll-margin-top: 0;
   }
 }
+/* 접근성 이슈로 스크린리더 온리 css 적용 */
 .sr-only {
   position: absolute;
   width: 1px;
