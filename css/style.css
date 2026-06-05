@@ -158,6 +158,7 @@ textarea:focus-visible {
   padding: 50px;
   text-align: end;
   position: relative;
+  background-position: center center;
 }
 .section-main {
   justify-self: center;
@@ -165,15 +166,18 @@ textarea:focus-visible {
   flex-direction: column;
   align-items: center;
 }
+.section-main-title,
+.section-main-english-title {
+  color: #1b3022;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+}
+
 .section-main-title {
   font-size: 3.5rem;
-  color: #1b3022;
 }
 .section-main-english-title {
-  font-size: 1.5rem;
-  color: #f9f9f9;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 1.8rem;
+  padding: 30px 0;
 }
 .section-main-wrapper::after {
   content: "";
@@ -188,7 +192,7 @@ textarea:focus-visible {
 .section-main-english-description {
   margin-top: 40px;
   display: flex;
-  gap: 50px;
+  gap: 100px;
 }
 .section-main-english-description span {
   font-weight: 500;
@@ -627,19 +631,22 @@ textarea:focus-visible {
     display: none;
   }
   /* 모바일미디어쿼리 히어로 */
-  .section-main-title {
-    font-size: 2.3rem;
+  .section-main-title,
+  .section-main-english-title {
     word-break: keep-all;
     color: #f9f9f9;
+    text-shadow: none;
+  }
+
+  .section-main-title {
+    font-size: 2.3rem;
     height: fit-content;
     padding: 5px 0;
   }
   .section-main-english-title {
-    word-break: keep-all;
     padding-top: 15px;
     font-size: 1.2rem;
     padding: 10px;
-    height: fit-content;
   }
   .section-main-wrapper {
     padding: 20px 0;
@@ -649,6 +656,7 @@ textarea:focus-visible {
   }
   .section-main-english-description {
     margin-top: 0;
+    gap: 50px;
   }
   .section-mail-desc,
   .section-github-desc {
@@ -817,13 +825,21 @@ textarea:focus-visible {
   .footer {
     padding: 2rem;
   }
-  .award-license-info {
-    gap: 10px;
-    font-size: 0.9rem;
-  }
+
+  .section-main-title,
   .section-main-english-title {
-    padding-top: 35px;
-    color: #1b3022;
+    color: #f9f9f9;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .section-main-english-description {
+    margin-top: 0;
+  }
+  .section-main-wrapper {
+    padding-bottom: 30px;
+  }
+  .section-main-wrapper::after {
+    display: none;
   }
   .project-wrapper {
     display: flex;
@@ -832,9 +848,14 @@ textarea:focus-visible {
     padding-left: 50px;
     gap: 30px;
   }
+  .award-license-info {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
   .section-profile,
-  .section-project {
-    scroll-margin-top: 0;
+  .section-project,
+  .section-tech {
+    scroll-margin-top: 40px;
   }
 }
 /* 접근성 이슈로 스크린리더 온리 css 적용 */
