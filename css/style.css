@@ -476,6 +476,10 @@
 .award-license-info {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+}
+.award-license-info p {
+  white-space: nowrap;
 }
 .award-license-item p:first-child:after {
   content: "|";
@@ -509,6 +513,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
+  width: 100%;
 }
 .section-contact-input:focus,
 .section-contact-textarea:focus {
@@ -754,7 +759,7 @@
   .two-sections-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 80px;
   }
   .section-profile-typing-container > strong {
     font-family: "Pretendard", sans-serif;
@@ -826,6 +831,16 @@
   .floating-icon svg {
     width: 30px;
     height: 30px;
+  }
+  .section-contact-button {
+    margin-top: 15px;
+  }
+  .section-contact {
+    opacity: 0;
+    transform: translateY(120px);
+    animation: riseUp 0.25s linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 35%;
   }
 }
 
