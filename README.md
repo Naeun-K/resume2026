@@ -9,12 +9,13 @@
 
 ## 🚀 배포 링크
 
-- **Live Demo :** 웹사이트 바로가기
-- **GitHub Repository :** 저장소 바로가기
+- **Live Demo :** [웹사이트 바로가기](https://naeun-k.github.io/resume2026/)
+- **GitHub Repository :** [저장소 바로가기](https://github.com/Naeun-K/resume2026)
 
 ## ⚒️ 사용 기술 (Skills)
 
-!Static Badge !Static Badge
+![Static Badge](https://img.shields.io/badge/HTML-67.9%25-E34F26)
+![Static Badge](https://img.shields.io/badge/CSS-32.1%25-1572B6)
 
 ## 📁 디렉토리 구조
 
@@ -32,7 +33,7 @@
 ## ⚙️ 주요 기능 (Implementation Details)
 
 - 히어로
-  - 백그라운드 이미지로 눈에 띄게 제작
+  - 백그라운드 이미지 삽입으로 히어로를 눈에 띄게 제작
   - 타이틀 텍스트가 잘 보일 수 있도록 text-shadow 활용
 
 - 기본 프로필(About)
@@ -85,7 +86,7 @@
    - form에 focus ring 추가
    - reset.css에 prefers-reduced-motion: reduce 시 애니메이션 적용 해제 추가
    - cdn.jsdelivr.net와 images.unsplash.com에 대한 preconnect 추가
-   - 헤더 내 탐색을 <nav>로 감싸 접근성 개선
+   - 헤더 내 탐색을 `<nav>`로 감싸 접근성 개선
    - GitHub 외부 링크에 rel="noopener noreferrer" 추가
    - form에 aria-label 추가
 
@@ -96,8 +97,8 @@
    - rise-up 애니메이션
      - 스크롤을 내릴때 부드럽게 다음 화면이 올라올 수 있게 하는 애니메이션
      - ref :
-       토스메인,
-       애플아이패드
+       [토스메인](https://toss.im/),
+       [애플아이패드](https://www.apple.com/kr/ipad/)
    - typing 애니메이션 & caret 애니메이션
      - tying 애니메이션 : 키보드를 작성하는 듯한 느낌을 주는 애니메이션
        - infinite 속성 사용 : 애니메이션 무한 반복
