@@ -856,6 +856,18 @@ textarea:focus-visible {
     scroll-margin-top: 40px;
   }
 }
+
+/* 접근성 이슈로  애니메이션 reduce css 적용 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
 /* 접근성 이슈로 스크린리더 온리 css 적용 */
 .sr-only {
   position: absolute;
