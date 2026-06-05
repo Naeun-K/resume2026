@@ -69,17 +69,6 @@
   font-weight: 900;
   font-display: swap;
 }
-/* 접근성 이슈로  애니메이션 reduce css 적용 */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms;
-    animation-iteration-count: 1;
-    transition-duration: 0.01ms;
-    scroll-behavior: auto;
-  }
-}
 /* ------------추후 스타일 적용을 위한 기본 세팅 ----------------- */
 *,
 *::before,
@@ -98,7 +87,7 @@ body {
   line-height: 1.6;
   background: linear-gradient(135deg, #1b3022, #476d52);
   font-family: "Pretendard", sans-serif;
-  color: #3b3c41;
+  color: var(--text);
 }
 /* a태그 기본적용 : 아래 밑줄 삭제, 글자색 상속 */
 a {

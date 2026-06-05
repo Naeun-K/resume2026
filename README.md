@@ -84,7 +84,7 @@
    - svg만 사용한 아이콘일 경우 텍스트를 모두 sr-only클래스로 묶어 overflow : hidden을 적용
 
    - form에 focus ring 추가
-   - reset.css에 prefers-reduced-motion: reduce 시 애니메이션 적용 해제 추가
+   - style.css에 prefers-reduced-motion: reduce 시 애니메이션 적용 해제 추가
    - cdn.jsdelivr.net와 images.unsplash.com에 대한 preconnect 추가
    - 헤더 내 탐색을 `<nav>`로 감싸 접근성 개선
    - GitHub 외부 링크에 rel="noopener noreferrer" 추가
