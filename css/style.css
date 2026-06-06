@@ -316,7 +316,6 @@ textarea:focus-visible {
 
 .section-profile-description {
   font-size: 1rem;
-  color: #3b3c41;
   padding-top: 10px;
 }
 /* ------------------------스킬 막대그래프---------------------- */
@@ -443,7 +442,6 @@ textarea:focus-visible {
 }
 .project-description {
   font-size: 1rem;
-  color: #3b3c41;
   padding-left: 30px;
   display: flex;
   flex-direction: column;
@@ -486,11 +484,9 @@ textarea:focus-visible {
 }
 .award-license-title {
   font-size: 1.2rem;
-  color: #3b3c41;
 }
 .award-license-description {
   font-size: 1rem;
-  color: #3b3c41;
 }
 .section-award-license,
 .section-contact {
@@ -583,11 +579,9 @@ textarea:focus-visible {
 }
 .footer-text {
   text-align: center;
-  color: #3b3c41;
   font-size: 0.9rem;
 }
 .footer-credit {
-  color: #3b3c41;
   font-size: 0.6rem;
   margin-top: 5px;
   display: flex;
@@ -775,7 +769,6 @@ textarea:focus-visible {
   }
   .project-description {
     font-size: 0.9rem;
-    color: #3b3c41;
     padding-left: 15px;
   }
   /* 모바일 미디어 쿼리( 두 섹션 묶음 ) */
