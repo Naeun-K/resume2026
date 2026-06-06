@@ -57,7 +57,7 @@
   - form 활용 : mailto 속성으로 버튼을 누르면 이메일로 연결
   - (추후 해결해야할 이슈) JavaScript로 json 내용 전달 예정
 
-## ⚠️ 개발 시 주요 고려 및 주의 사항 (Technical Considerations)
+## ⚠️ 개발 시 주요 고려 사항 (Technical Considerations)
 
 1. 반응형 디자인
    - 히어로가 미디어쿼리 사이즈 변화에 따라 변경
