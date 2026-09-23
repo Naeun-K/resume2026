@@ -7,7 +7,8 @@
     <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="app.js" defer></script>
+    <script src="./scripts/graph.js" defer></script>
+    <script src="./scripts/typing.js" defer></script>
   </head>
   <body>
     <header id="header" class="header">
@@ -90,7 +91,10 @@
         <h2 class="sr-only">프로필 소개 공간</h2>
         <h3 class="small-title">About</h3>
         <div class="section-profile-typing-container">
-          <strong> 어제보다 더 발전하는 개발자, 김나은입니다.</strong>
+          <strong>
+            어제보다 더 발전하는 개발자, 김나은입니다.
+            <span class="typing-cursor"></span>
+          </strong>
         </div>
         <div class="section-profile-wrapper">
           <ul class="section-profile-list">
@@ -198,6 +202,66 @@
         <h2 class="sr-only">기술 스택 소개 공간</h2>
         <h3 class="section-tech-title small-title">Skills</h3>
         <ul class="skill-list">
+          <li class="skill-item">
+            <span class="skill-name">HTML</span>
+
+            <div class="skill-bar">
+              <div class="skill-progress" data-percent="90">
+                <span class="skill-percent"></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="skill-item">
+            <span class="skill-name">CSS</span>
+
+            <div class="skill-bar">
+              <div class="skill-progress" data-percent="90">
+                <span class="skill-percent"></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="skill-item">
+            <span class="skill-name">Java</span>
+
+            <div class="skill-bar">
+              <div class="skill-progress" data-percent="75">
+                <span class="skill-percent"></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="skill-item">
+            <span class="skill-name">JavaScript</span>
+
+            <div class="skill-bar">
+              <div class="skill-progress" data-percent="80">
+                <span class="skill-percent"></span>
+              </div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">React</span>
+
+            <div class="skill-bar">
+              <div class="skill-progress" data-percent="80">
+                <span class="skill-percent"></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="skill-item">
+            <span class="skill-name">Python</span>
+
+            <div class="skill-bar">
+              <div class="skill-progress" data-percent="90">
+                <span class="skill-percent"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- <ul class="skill-list">
           <li>
             <p class="skill-name">HTML</p>
             <div class="skill-bar" data-percentage="80%">
@@ -228,7 +292,7 @@
               <div class="skill-fill skill-fill-python"></div>
             </div>
           </li>
-        </ul>
+        </ul> -->
       </section>
       <section id="project" class="section section-project card">
         <h2 class="sr-only">프로젝트 소개 공간</h2>
