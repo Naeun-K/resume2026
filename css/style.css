@@ -72,7 +72,8 @@ textarea:focus-visible {
   transform: translateY(-5px);
 }
 .section-main-english-description .btn:hover {
-  transform: translateY(-5px) scale(1.2);
+  transform: translateY(10px) scale(1.2);
+  background-color: #629671;
 }
 .section-contact .btn:hover {
   background-color: #476d52;
@@ -145,14 +146,16 @@ textarea:focus-visible {
 .main-wrapper {
   margin-top: 50px;
   padding: 30px;
-  background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background:
+    linear-gradient(rgba(27, 48, 34, 0.2), rgba(27, 48, 34, 0.2)),
+    url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
-  background-color: #f7f2eb;
   border-radius: 50px;
 }
 .section-main-wrapper {
   padding: 50px;
+  padding-bottom: 0;
   text-align: end;
   position: relative;
   background-position: center center;
@@ -165,8 +168,8 @@ textarea:focus-visible {
 }
 .section-main-title,
 .section-main-english-title {
-  color: #1b3022;
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+  color: #f9f9f9;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .section-main-title {
@@ -176,20 +179,10 @@ textarea:focus-visible {
   font-size: 1.8rem;
   padding: 30px 0;
 }
-.section-main-wrapper::after {
-  content: "";
-  display: block;
-  width: 20%;
-  height: 10px;
-  background-color: #1b3022;
-  margin-top: 10px;
-  position: absolute;
-  right: 50px;
-}
 .section-main-english-description {
-  margin-top: 40px;
+  padding-bottom: 30px;
   display: flex;
-  gap: 100px;
+  gap: 120px;
 }
 .section-main-english-description span {
   font-weight: 500;
@@ -246,7 +239,7 @@ textarea:focus-visible {
 .section-profile-typing-container > strong {
   display: inline-block;
   font-family: "monospace", monospace;
-  font-size: 1.5rem;
+  font-size: clamp(10px, 4.5vw, 1.5rem);
   color: #1b3022;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -267,7 +260,7 @@ textarea:focus-visible {
     width: 0%;
   }
   to {
-    width: 135%;
+    width: 125%;
   }
 }
 
@@ -413,7 +406,7 @@ textarea:focus-visible {
 .project-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+
   gap: 50px;
   padding-top: 20px;
 }
@@ -466,6 +459,69 @@ textarea:focus-visible {
   gap: 40px;
   scroll-margin-top: 0;
 }
+.site-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  /* width: 300px; */
+  width: 100%;
+  padding: 20px;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  color: #222;
+  text-decoration: none;
+}
+
+.site-card img {
+  object-fit: cover;
+}
+
+.site-card p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-card .card-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+li.tech-set > span:first-child {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.short-tech-set {
+  height: 45px;
+  width: auto;
+  aspect-ratio: 1.66/1;
+}
+.tech-img-wrapper {
+  width: 200px;
+}
+.site-card:hover {
+  background: #f5f5f5;
+}
+
+.project-description > li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-indent: 0;
+}
+
+.project-description > li::before {
+  margin-right: 0; /* flex의 gap: 10px과 간격 중복 방지 */
+  flex-shrink: 0;
+}
+
 /* --------------------------- 상과 자격증 ----------------------- */
 .award-license-item {
   padding-bottom: 20px;
@@ -624,7 +680,6 @@ textarea:focus-visible {
   .section-main-title,
   .section-main-english-title {
     word-break: keep-all;
-    color: #f9f9f9;
     text-shadow: none;
   }
 
@@ -647,6 +702,7 @@ textarea:focus-visible {
   .section-main-english-description {
     margin-top: 0;
     gap: 50px;
+    padding-bottom: 0;
   }
   .section-mail-desc,
   .section-github-desc {
@@ -677,21 +733,17 @@ textarea:focus-visible {
     display: flex;
     flex-direction: column;
   }
+
   .section-profile-typing-container > strong {
     font-family: "Pretendard", sans-serif;
     font-size: 1.5rem;
     color: #1b3022;
     padding: 10px 0;
+    margin: 0;
 
-    white-space: normal;
     word-break: keep-all;
-    overflow: visible;
-    border-right: none;
-    width: auto;
-  }
-
-  .section-profile-typing-container > strong.typing-active {
-    animation: none;
+    white-space: normal; /* 줄바꿈 허용 */
+    border-right: none; /* 모바일에서 어색할 수 있는 커서 제거 */
   }
 
   .section-profile--img-wrapper,
@@ -811,12 +863,6 @@ textarea:focus-visible {
   .footer {
     width: 100%;
     padding: 2rem;
-  }
-
-  .section-main-title,
-  .section-main-english-title {
-    color: #f9f9f9;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   }
 
   .section-main-english-description {
