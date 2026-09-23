@@ -234,41 +234,41 @@ textarea:focus-visible {
 }
 .section-profile-typing-container {
   display: inline-block;
+  height: calc(1.5em + 20px);
 }
 
 .section-profile-typing-container > strong {
   display: inline-block;
+  width: 100%;
   font-family: "monospace", monospace;
   font-size: clamp(10px, 4.5vw, 1.5rem);
+  line-height: 1.5;
   color: #1b3022;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
   white-space: nowrap;
-  overflow: hidden;
-  border-right: 0.12rem solid #1b3022;
-  width: 0;
 }
 
-.section-profile-typing-container > strong.typing-active {
-  animation:
-    typing 3.8s steps(30) forwards infinite,
-    caret 0.7s step-end infinite;
-}
-/*-- 타이핑 효과 애니메이션 -- */
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 125%;
-  }
+.typing-cursor {
+  display: inline-block;
+
+  width: 0.12rem;
+  height: 1em;
+
+  margin-left: 3px;
+
+  background-color: #1b3022;
+
+  vertical-align: -0.1em;
+
+  animation: caret 0.7s step-end infinite;
 }
 
 @keyframes caret {
   50% {
-    border-color: transparent;
+    opacity: 0;
   }
 }
+
 .section-profile {
   scroll-margin-top: 40px;
 }
@@ -350,58 +350,26 @@ textarea:focus-visible {
   align-items: center;
 }
 
-.skill-bar .skill-fill {
+.skill-progress {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 0;
   height: 100%;
-  padding: 0;
-  text-align: center;
+
   background-color: #1b3022;
+  border-radius: 8px;
+
+  transition: width 1.5s ease-out;
+}
+.skill-percent {
+  padding-right: 16px;
   color: #fff;
-  border-radius: 5px;
-  transition: width 0.5s ease;
-  position: relative;
-}
-.skill-fill-html {
-  width: 80%;
-}
-.skill-fill-css {
-  width: 70%;
-}
-.skill-fill-java {
-  width: 80%;
-}
-.skill-fill-oracle {
-  width: 85%;
-}
-.skill-fill-python {
-  width: 90%;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.skill-fill::after {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #f9f9f9;
-  font-size: 0.9rem;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.skill-fill-html::after {
-  content: "80%";
-}
-.skill-fill-css::after {
-  content: "70%";
-}
-.skill-fill-java::after {
-  content: "80%";
-}
-.skill-fill-oracle::after {
-  content: "85%";
-}
-.skill-fill-python::after {
-  content: "90%";
-}
 /* --------------------------프로젝트 설명칸------------------------ */
 .project-wrapper {
   display: grid;
@@ -466,7 +434,6 @@ textarea:focus-visible {
   align-items: center;
   gap: 16px;
 
-  /* width: 300px; */
   width: 100%;
   padding: 20px;
 
@@ -474,7 +441,14 @@ textarea:focus-visible {
   border-radius: 12px;
 
   color: #222;
-  text-decoration: none;
+
+  transition:
+    background-color 0.3s,
+    border 0.3s;
+}
+.site-card:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #1b3022;
 }
 
 .site-card img {
@@ -505,9 +479,6 @@ li.tech-set > span:first-child {
 }
 .tech-img-wrapper {
   width: 200px;
-}
-.site-card:hover {
-  background: #f5f5f5;
 }
 
 .project-description > li {
@@ -733,17 +704,18 @@ li.tech-set > span:first-child {
     display: flex;
     flex-direction: column;
   }
-
+  .section-profile-typing-container {
+    height: calc(4.5rem + 5px);
+  }
   .section-profile-typing-container > strong {
-    font-family: "Pretendard", sans-serif;
-    font-size: 1.5rem;
-    color: #1b3022;
-    padding: 10px 0;
-    margin: 0;
+    top: 10px;
+    width: 100%;
+
+    font-size: 1.2rem;
+    line-height: 1.5;
 
     word-break: keep-all;
     white-space: normal; /* 줄바꿈 허용 */
-    border-right: none; /* 모바일에서 어색할 수 있는 커서 제거 */
   }
 
   .section-profile--img-wrapper,
