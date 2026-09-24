@@ -7,8 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./scripts/graph.js" defer></script>
-    <script src="./scripts/typing.js" defer></script>
+    <script type="module" src="./scripts/main.js"></script>
   </head>
   <body>
     <header id="header" class="header">
@@ -541,11 +540,10 @@
           <h2 class="sr-only">메일로 연락할 수 있는 공간</h2>
           <h3 class="section-contact-title small-title">Contact</h3>
           <form
+            id="contact-form"
             class="section-contact-wrapper"
-            action="mailto:nek7148@gmail.com"
+            action="https://formspree.io/f/mgavyqrz"
             method="post"
-            enctype="text/plain"
-            target="_blank"
             aria-label="연락처 메일 작성 양식"
           >
             <label for="name" class="section-contact-label">이름</label>
@@ -557,6 +555,19 @@
               required
               placeholder="이름을 입력하세요"
             />
+
+            <label for="email" class="section-contact-label"> 이메일 </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="section-contact-input"
+              required
+              autocomplete="email"
+              placeholder="답변받을 이메일을 입력하세요"
+            />
+
             <label for="title" class="section-contact-label">제목</label>
             <input
               type="text"
@@ -573,6 +584,13 @@
               required
               placeholder="내용을 입력하세요"
             ></textarea>
+
+            <p
+              id="contact-status"
+              class="section-contact-status"
+              aria-live="polite"
+            ></p>
+
             <button type="submit" class="section-contact-button btn">
               보내기
             </button>

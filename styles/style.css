@@ -72,7 +72,7 @@ textarea:focus-visible {
   transform: translateY(-5px);
 }
 .section-main-english-description .btn:hover {
-  transform: translateY(10px) scale(1.2);
+  transform: translateY(5px) scale(1.05);
   background-color: #629671;
 }
 .section-contact .btn:hover {
@@ -443,10 +443,12 @@ textarea:focus-visible {
   color: #222;
 
   transition:
+    transform 0.3s,
     background-color 0.3s,
     border 0.3s;
 }
 .site-card:hover {
+  transform: scale(1.01);
   background-color: #f5f5f5;
   border: 1px solid #1b3022;
 }
@@ -545,6 +547,34 @@ li.tech-set > span:first-child {
 .section-contact-textarea {
   resize: none;
   min-height: 100px;
+}
+.section-contact-status {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  justify-content: flex-start;
+  gap: 6px;
+
+  min-height: 24px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.section-contact-status svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.section-contact-status.success {
+  color: #3f7d5a;
+}
+
+.section-contact-status.error {
+  color: #b45353;
+}
+.section-contact-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 .section-contact-button {
   background-color: #1b3022;
