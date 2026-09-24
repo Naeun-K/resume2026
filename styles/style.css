@@ -5,17 +5,12 @@
   font-weight: normal;
   font-display: swap;
 }
+
 /* ---------- layout --------------- */
 .section {
   width: 100%;
+  margin-top: 120px;
   scroll-margin-top: 100px;
-  margin-top: 90px;
-
-  opacity: 0;
-  transform: translateY(120px);
-  animation: riseUp 0.25s linear both;
-  animation-timeline: view();
-  animation-range: entry 10% cover 35%;
 }
 
 .card {
@@ -30,17 +25,7 @@
   font-size: 1.5rem;
   padding-bottom: 15px;
 }
-/* -- 스크롤 다운 시 부드럽게 올라오는 애니메이션 -- */
-@keyframes riseUp {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 /* -- 버튼 애니메이션 추가 -- */
 .btn {
   transition:
@@ -48,12 +33,15 @@
     box-shadow 0.5s ease,
     background-color 0.5s ease;
 }
+
 .btn-letter {
   transition: transform 0.5s ease;
 }
+
 .btn-letter:hover {
   transform: scale(1.2);
 }
+
 .btn:focus-visible,
 a:focus-visible,
 button:focus-visible,
@@ -62,22 +50,27 @@ textarea:focus-visible {
   outline: 3px solid rgba(98, 150, 113, 0.9);
   outline-offset: 3px;
 }
+
 .header-nav .btn:hover {
   background-color: #f9f9f9;
   transform: translateY(8px) scale(1.05);
 }
+
 .section-main-english-description .btn:hover,
 .section-contact .btn:hover {
   box-shadow: 0 10px 20px 5px rgb(0 0 0 / 20%);
   transform: translateY(-5px);
 }
+
 .section-main-english-description .btn:hover {
   transform: translateY(5px) scale(1.05);
   background-color: #629671;
 }
+
 .section-contact .btn:hover {
   background-color: #476d52;
 }
+
 /* -------------------헤더 ------------------------ */
 .header {
   display: flex;
@@ -87,6 +80,7 @@ textarea:focus-visible {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .header-title {
   font-family: "Cafe24LovingU", cursive;
   font-size: 4rem;
@@ -94,29 +88,36 @@ textarea:focus-visible {
   color: #fff;
   padding: 10px;
 }
+
 .header-navigation {
   width: 100%;
   margin: 0;
   padding: 0;
 }
+
 .header-nav {
   display: grid;
   grid-template: 1fr / repeat(4, 1fr);
   gap: 10px;
   align-items: center;
 }
+
 .header-nav li:first-child {
   background-color: #f5f1f1;
 }
+
 .header-nav li:nth-child(2) {
   background-color: #e7e3dd;
 }
+
 .header-nav li:nth-child(3) {
   background-color: #cac5b1;
 }
+
 .header-nav li:last-child {
   background-color: #9c9888;
 }
+
 .header-nav-item {
   padding: 10px;
   text-align: center;
@@ -125,11 +126,13 @@ textarea:focus-visible {
   display: inline-block;
   width: 100%;
 }
+
 .header-nav-item a {
   width: 100%;
   height: 100%;
   display: block;
 }
+
 /*----------------------- 메인 --------------------------*/
 .main,
 .footer {
@@ -139,9 +142,11 @@ textarea:focus-visible {
   width: 100%;
   margin: 0 auto;
 }
+
 .main {
   padding: 50px;
 }
+
 /* --------------히어로---------------------- */
 .main-wrapper {
   margin-top: 50px;
@@ -153,6 +158,7 @@ textarea:focus-visible {
   background-position: center;
   border-radius: 50px;
 }
+
 .section-main-wrapper {
   padding: 50px;
   padding-bottom: 0;
@@ -160,12 +166,14 @@ textarea:focus-visible {
   position: relative;
   background-position: center center;
 }
+
 .section-main {
   justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .section-main-title,
 .section-main-english-title {
   color: #f9f9f9;
@@ -175,27 +183,32 @@ textarea:focus-visible {
 .section-main-title {
   font-size: 3.5rem;
 }
+
 .section-main-english-title {
   font-size: 1.8rem;
   padding: 30px 0;
 }
+
 .section-main-english-description {
   padding-bottom: 30px;
   display: flex;
   gap: 120px;
 }
+
 .section-main-english-description span {
   font-weight: 500;
   font-size: 1.2rem;
   max-width: 400px;
   white-space: nowrap;
 }
+
 .section-mail-desc,
 .section-github-desc {
   display: inline-flex;
   align-items: center;
   gap: 10px;
 }
+
 .section-mail-desc svg,
 .section-github-desc svg {
   width: 16px;
@@ -211,6 +224,7 @@ textarea:focus-visible {
   padding-right: 20px;
   border-radius: 30px;
 }
+
 /* ------------------ 프로필(About)---------------- */
 .section-profile-list svg,
 .section-profile-list-icon {
@@ -219,19 +233,23 @@ textarea:focus-visible {
   height: 20px;
   vertical-align: middle;
 }
+
 .project-description svg {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin: 0 5px;
 }
+
 .project-tech-context::before {
   content: "- ";
 }
+
 .section-profile-img {
   border-radius: 50px;
   object-fit: cover;
 }
+
 .section-profile-typing-container {
   display: inline-block;
   height: calc(1.5em + 20px);
@@ -244,22 +262,16 @@ textarea:focus-visible {
   font-size: clamp(10px, 4.5vw, 1.5rem);
   line-height: 1.5;
   color: #1b3022;
-
   white-space: nowrap;
 }
 
 .typing-cursor {
   display: inline-block;
-
   width: 0.12rem;
   height: 1em;
-
   margin-left: 3px;
-
   background-color: #1b3022;
-
   vertical-align: -0.1em;
-
   animation: caret 0.7s step-end infinite;
 }
 
@@ -267,10 +279,6 @@ textarea:focus-visible {
   50% {
     opacity: 0;
   }
-}
-
-.section-profile {
-  scroll-margin-top: 40px;
 }
 
 .section-profile-wrapper {
@@ -282,12 +290,14 @@ textarea:focus-visible {
   justify-content: center;
   align-items: center;
 }
+
 .section-profile-list {
   padding: 20px;
   line-height: 1.8;
   justify-self: end;
   flex: 1;
 }
+
 .section-profile-list > li {
   padding: 5px;
   font-size: 1rem;
@@ -299,9 +309,11 @@ textarea:focus-visible {
   flex: 1;
   height: auto;
 }
+
 .section-profile-wrapper::after {
   content: "";
   display: block;
+  grid-column: 1 / -1;
   width: 100%;
   height: 1px;
   background-color: #ccc;
@@ -311,10 +323,27 @@ textarea:focus-visible {
   font-size: 1rem;
   padding-top: 10px;
 }
+.section-profile-accordion {
+  width: 100%;
+}
+
+.section-profile-accordion-button {
+  display: none;
+}
+
+.section-profile-accordion-content {
+  display: block;
+}
+
 /* ------------------------스킬 막대그래프---------------------- */
+.section-tech {
+  scroll-margin-top: 180px;
+}
+
 .section-tech-title {
   padding-bottom: 20px;
 }
+
 .skill-list {
   display: flex;
   flex-direction: column;
@@ -322,6 +351,7 @@ textarea:focus-visible {
   gap: 20px;
   padding-right: 50px;
 }
+
 .skill-list li {
   display: flex;
   align-items: center;
@@ -329,6 +359,7 @@ textarea:focus-visible {
   vertical-align: baseline;
   margin-bottom: 15px;
 }
+
 .skill-name {
   width: 20%;
   text-align: center;
@@ -354,15 +385,13 @@ textarea:focus-visible {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   width: 0;
   height: 100%;
-
   background-color: #1b3022;
   border-radius: 8px;
-
   transition: width 1.5s ease-out;
 }
+
 .skill-percent {
   padding-right: 16px;
   color: #fff;
@@ -374,10 +403,10 @@ textarea:focus-visible {
 .project-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   gap: 50px;
   padding-top: 20px;
 }
+
 .project-info {
   display: flex;
   gap: 10px;
@@ -385,6 +414,7 @@ textarea:focus-visible {
   font-size: 0.9rem;
   flex-wrap: wrap;
 }
+
 .mobile-array {
   flex-wrap: nowrap;
   display: flex;
@@ -395,12 +425,15 @@ textarea:focus-visible {
   content: "|";
   margin-right: 10px;
 }
+
 .project-count::after {
   content: ")";
 }
+
 .project-count::before {
   content: "(";
 }
+
 .project-description {
   font-size: 1rem;
   padding-left: 30px;
@@ -409,44 +442,49 @@ textarea:focus-visible {
   height: fit-content;
   word-break: keep-all;
 }
+
 .project-description > li {
   padding-left: 20px;
   text-indent: -20px;
 }
+
 .project-description > li::before {
   content: "-";
   padding: 0;
   margin: 0;
   margin-right: 10px;
 }
+
 /* contact와 awards & licences 두개 묶음 */
 .two-sections-wrapper {
   padding: 5px;
   display: flex;
   justify-content: space-around;
   gap: 40px;
-  scroll-margin-top: 0;
 }
+
+.section-award-license,
+.section-contact {
+  scroll-margin-top: 100px;
+}
+
 .site-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
-
   width: 100%;
   padding: 20px;
-
   border: 1px solid #ddd;
   border-radius: 12px;
-
   color: #222;
-
   transition:
     transform 0.3s,
     background-color 0.3s,
     border 0.3s;
 }
+
 .site-card:hover {
   transform: scale(1.01);
   background-color: #f5f5f5;
@@ -470,15 +508,18 @@ textarea:focus-visible {
   justify-content: center;
   align-items: center;
 }
+
 li.tech-set > span:first-child {
   flex-shrink: 0;
   white-space: nowrap;
 }
+
 .short-tech-set {
   height: 45px;
   width: auto;
   aspect-ratio: 1.66/1;
 }
+
 .tech-img-wrapper {
   width: 200px;
 }
@@ -491,7 +532,7 @@ li.tech-set > span:first-child {
 }
 
 .project-description > li::before {
-  margin-right: 0; /* flex의 gap: 10px과 간격 중복 방지 */
+  margin-right: 0;
   flex-shrink: 0;
 }
 
@@ -499,28 +540,35 @@ li.tech-set > span:first-child {
 .award-license-item {
   padding-bottom: 20px;
 }
+
 .award-license-info {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .award-license-info p {
   white-space: nowrap;
 }
+
 .award-license-item p:first-child:after {
   content: "|";
   margin-left: 10px;
 }
+
 .award-license-title {
   font-size: 1.2rem;
 }
+
 .award-license-description {
   font-size: 1rem;
 }
+
 .section-award-license,
 .section-contact {
   flex: 1;
 }
+
 /* ------------------------연락칸---------------------- */
 .section-contact-wrapper {
   display: flex;
@@ -528,9 +576,11 @@ li.tech-set > span:first-child {
   gap: 10px;
   width: 100%;
 }
+
 .section-contact-label {
   font-size: 1rem;
 }
+
 .section-contact-input,
 .section-contact-textarea {
   padding: 10px;
@@ -539,32 +589,34 @@ li.tech-set > span:first-child {
   margin-bottom: 10px;
   width: 100%;
 }
+
 .section-contact-input:focus,
 .section-contact-textarea:focus {
   box-shadow: 0 0 0 2px rgba(27, 48, 34, 0.3);
   border-color: #1b3022;
 }
+
 .section-contact-textarea {
   resize: none;
   min-height: 100px;
 }
+
 .section-contact-status {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   justify-content: flex-start;
   gap: 6px;
-
   min-height: 24px;
-
   font-size: 0.9rem;
   font-weight: 500;
 }
+
 .section-contact-status svg {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
 }
+
 .section-contact-status.success {
   color: #3f7d5a;
 }
@@ -572,10 +624,12 @@ li.tech-set > span:first-child {
 .section-contact-status.error {
   color: #b45353;
 }
+
 .section-contact-button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
 .section-contact-button {
   background-color: #1b3022;
   color: #fff;
@@ -585,6 +639,7 @@ li.tech-set > span:first-child {
   font-size: 1rem;
   border-radius: 10px;
 }
+
 /* 플로팅 아이콘 ------ 탑으로 이동 */
 .floating-icon {
   position: fixed;
@@ -606,10 +661,12 @@ li.tech-set > span:first-child {
     transform 0.3s ease,
     background-color 0.3s ease;
 }
+
 .floating-icon:hover {
   background-color: #629671;
   transform: scale(1.1);
 }
+
 .floating-icon-link {
   display: inline-flex;
   width: 100%;
@@ -618,6 +675,7 @@ li.tech-set > span:first-child {
   justify-content: center;
   color: inherit;
 }
+
 .floating-icon-link svg {
   width: 50px;
   height: 50px;
@@ -625,6 +683,7 @@ li.tech-set > span:first-child {
   text-align: center;
   margin: 0;
 }
+
 /* -------------------------푸터------------------------- */
 .footer::before {
   content: "";
@@ -634,10 +693,12 @@ li.tech-set > span:first-child {
   background-color: #ccc;
   margin-bottom: 20px;
 }
+
 .footer-text {
   text-align: center;
   font-size: 0.9rem;
 }
+
 .footer-credit {
   font-size: 0.6rem;
   margin-top: 5px;
@@ -645,10 +706,12 @@ li.tech-set > span:first-child {
   gap: 5px;
   justify-content: center;
 }
+
 .footer-credit-icons8::after {
   content: "|";
   margin-left: 5px;
 }
+
 /* -----------------미디어 쿼리(모바일버전)------------------ */
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 미디어 쿼리 layout */
@@ -656,27 +719,43 @@ li.tech-set > span:first-child {
     background-image: url(https://images.unsplash.com/photo-1669052700037-db884b37b2d9?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-position: center;
   }
+
   .main {
     padding: 10px;
   }
+
   .section {
-    scroll-margin-top: 50px;
     margin-top: 30px;
+    scroll-margin-top: 40px;
   }
+
+  .section-award-license,
+  .section-contact {
+    scroll-margin-top: 40px;
+  }
+
   /* 모바일 미디어 쿼리 헤더 */
   .header-title {
     font-size: 3.5rem;
     padding: 5px;
   }
+
   .header-nav {
     gap: 0;
   }
+
   .header-nav a {
     font-size: 0.8rem;
   }
+
   .mobile-spacer {
     display: none;
   }
+
+  .card {
+    padding: 40px 16px;
+  }
+
   /* 모바일미디어쿼리 히어로 */
   .section-main-title,
   .section-main-english-title {
@@ -689,28 +768,34 @@ li.tech-set > span:first-child {
     height: fit-content;
     padding: 5px 0;
   }
+
   .section-main-english-title {
     padding-top: 15px;
     font-size: 1.2rem;
     padding: 10px;
   }
+
   .section-main-wrapper {
     padding: 20px 0;
   }
+
   .section-main-wrapper::after {
     display: none;
   }
+
   .section-main-english-description {
     margin-top: 0;
     gap: 50px;
     padding-bottom: 0;
   }
+
   .section-mail-desc,
   .section-github-desc {
     background-color: transparent;
     gap: 50px;
     justify-content: center;
   }
+
   .section-main-english-description span {
     position: absolute;
     width: 1px;
@@ -722,30 +807,37 @@ li.tech-set > span:first-child {
     white-space: nowrap;
     border: 0;
   }
+
   .section-mail-desc svg,
   .section-github-desc svg {
     color: #f9f9f9;
     width: 40px;
     height: 40px;
   }
+
   /* 모바일 미디어 쿼리 프로필(about) */
   .section-profile-wrapper {
-    padding: 10px 0;
     display: flex;
     flex-direction: column;
+    padding: 0 0 30px;
+    gap: 0;
   }
+
+  .section-profile-wrapper::after {
+    display: none;
+  }
+
   .section-profile-typing-container {
     height: calc(4.5rem + 5px);
   }
+
   .section-profile-typing-container > strong {
     top: 10px;
     width: 100%;
-
     font-size: 1.2rem;
     line-height: 1.5;
-
     word-break: keep-all;
-    white-space: normal; /* 줄바꿈 허용 */
+    white-space: normal;
   }
 
   .section-profile--img-wrapper,
@@ -763,29 +855,83 @@ li.tech-set > span:first-child {
   .section-profile-list {
     padding: 0;
     margin: 0;
-    flex: 1;
+    flex: none;
   }
+
   .section-profile-list > li {
     font-size: 1rem;
   }
+
   .section-profile-list svg,
   .section-profile-list-icon {
     margin-right: 10px;
     width: 20px;
     height: 20px;
   }
-  .section-profile,
-  .section-project {
-    scroll-margin-top: 0;
+
+  .section-profile-accordion {
+    width: 100%;
+    border-top: 1px solid #ccc;
   }
 
-  /* 모바일 미디어 쿼리 스킬 파트  */
-  .section-tech {
-    scroll-margin-top: 40px;
+  .section-profile-accordion-button {
+    display: flex;
+    width: 100%;
+    padding: 20px 5px 8px;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+    background-color: transparent;
+    color: #1b3022;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
   }
+
+  .section-profile-accordion-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .section-profile-accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 0.4s ease,
+      opacity 0.3s ease;
+  }
+
+  .section-profile-accordion-content > .section-profile-description {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .section-profile-accordion.is-open .section-profile-accordion-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .section-profile-accordion.is-open .section-profile-accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .section-profile-description {
+    padding-top: 15px;
+    line-height: 1.7;
+  }
+
+  /* 모바일 미디어 쿼리 스킬 파트 */
+  .section-tech {
+    scroll-margin-top: 100px;
+  }
+
   .skill-list {
     padding: 0;
   }
+
   .skill-list li {
     display: grid;
     align-items: center;
@@ -799,6 +945,7 @@ li.tech-set > span:first-child {
     flex-direction: column;
     gap: 40px;
   }
+
   .project-info {
     display: flex;
     flex-direction: column;
@@ -806,34 +953,37 @@ li.tech-set > span:first-child {
     padding-left: 10px;
     font-size: 0.9rem;
   }
+
   .mobile-array {
     gap: 0;
   }
+
   .project-role::after {
     display: none;
   }
+
   .project-count::before {
     display: none;
   }
+
   .project-count::after {
     display: none;
   }
+
   .project-period::before {
     margin-left: 10px;
   }
+
   .project-description {
     font-size: 0.9rem;
     padding-left: 15px;
   }
+
   /* 모바일 미디어 쿼리( 두 섹션 묶음 ) */
   .two-sections-wrapper {
     display: flex;
     flex-direction: column;
     gap: 50px;
-  }
-  /* 상 및 자격증 섹션 */
-  .section-award-license {
-    scroll-margin-top: 50px;
   }
 
   /* 플로팅 아이콘 - 탑으로 이동 */
@@ -843,24 +993,33 @@ li.tech-set > span:first-child {
     width: 40px;
     height: 40px;
   }
+
   .floating-icon svg {
     width: 30px;
     height: 30px;
   }
+
   /* 연락 섹션 */
   .section-contact-button {
     margin-top: 15px;
   }
-  .section-contact {
-    opacity: 0;
-    transform: translateY(120px);
-    animation: riseUp 0.25s linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 35%;
-  }
 }
+
 /* ---------------------미디어쿼리(태블릿버전)----------------------- */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .section {
+    scroll-margin-top: 70px;
+  }
+
+  .section-tech {
+    scroll-margin-top: 140px;
+  }
+
+  .section-award-license,
+  .section-contact {
+    scroll-margin-top: 70px;
+  }
+
   .main,
   .footer {
     width: 100%;
@@ -870,12 +1029,15 @@ li.tech-set > span:first-child {
   .section-main-english-description {
     margin-top: 0;
   }
+
   .section-main-wrapper {
     padding-bottom: 30px;
   }
+
   .section-main-wrapper::after {
     display: none;
   }
+
   .project-wrapper {
     display: flex;
     flex-direction: column;
@@ -883,22 +1045,14 @@ li.tech-set > span:first-child {
     padding-left: 50px;
     gap: 30px;
   }
+
   .award-license-info {
     gap: 10px;
     font-size: 0.9rem;
   }
-  .section-profile,
-  .section-project,
-  .section-tech {
-    scroll-margin-top: 40px;
-  }
-  .section-project,
-  .section-tech {
-    scroll-margin-top: 40px;
-  }
 }
 
-/* 접근성 이슈로  애니메이션 reduce css 적용 */
+/* 접근성 이슈로 애니메이션 reduce css 적용 */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -909,6 +1063,7 @@ li.tech-set > span:first-child {
     scroll-behavior: auto;
   }
 }
+
 /* 접근성 이슈로 스크린리더 온리 css 적용 */
 .sr-only {
   position: absolute;

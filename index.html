@@ -186,16 +186,48 @@
             />
           </div>
         </div>
-        <p class="section-profile-description">
-          저는 Python Pandas를 활용한 데이터분석부터 개발자로서의 역량을 키우기
-          위해 다양한 프로젝트에 참여하며 경험을 쌓아왔습니다. 이후 JAVA,
-          TensorFlow와 같은 새로운 기술들을 배우는 것을 즐기며, 프로그래밍에
-          대한 열정과 책임감을 가지고 있습니다. 팀원들과 협력하여 효율적인
-          솔루션을 찾는 것을 중요하게 생각하며, 항상 더 나은 결과를 도출하기
-          위해 노력하고 있습니다. 오르미 프론트엔드 개발자과정을 통해
-          JavaScript, React 등 다양한 기술을 습득하고 기존의 기술들과 접목하여,
-          풀스택 개발자로 성장하고 있습니다.
-        </p>
+        <div class="section-profile-accordion">
+          <button
+            type="button"
+            class="section-profile-accordion-button"
+            aria-expanded="false"
+            aria-controls="profile-description"
+          >
+            <span>인삿말 더보기</span>
+
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="section-profile-accordion-icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </button>
+
+          <div
+            id="profile-description"
+            class="section-profile-accordion-content"
+          >
+            <p class="section-profile-description">
+              저는 Python Pandas를 활용한 데이터분석부터 개발자로서의 역량을
+              키우기 위해 다양한 프로젝트에 참여하며 경험을 쌓아왔습니다. 이후
+              JAVA, TensorFlow와 같은 새로운 기술들을 배우는 것을 즐기며,
+              프로그래밍에 대한 열정과 책임감을 가지고 있습니다. 팀원들과
+              협력하여 효율적인 솔루션을 찾는 것을 중요하게 생각하며, 항상 더
+              나은 결과를 도출하기 위해 노력하고 있습니다. 오르미 프론트엔드
+              개발자과정을 통해 JavaScript, React 등 다양한 기술을 습득하고
+              기존의 기술들과 접목하여, 풀스택 개발자로 성장하고 있습니다.
+            </p>
+          </div>
+        </div>
       </section>
       <section id="tech" class="section section-tech card">
         <h2 class="sr-only">기술 스택 소개 공간</h2>
