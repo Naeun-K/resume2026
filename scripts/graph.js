@@ -1,43 +1,4 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const skillSection = document.querySelector(".section-tech");
-//   const skillBars = document.querySelectorAll(".skill-progress");
-
-//   if (!skillSection || skillBars.length === 0) return;
-
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         if (!entry.isIntersecting) return;
-
-//         skillBars.forEach((skillBar) => {
-//           const percent = Number(skillBar.dataset.percent);
-//           const percentText = skillBar.querySelector(".skill-percent");
-
-//           skillBar.style.width = `${percent}%`;
-
-//           skillBar.addEventListener(
-//             "transitionend",
-//             () => {
-//               if (percentText) {
-//                 percentText.textContent = `${percent}%`;
-//               }
-//             },
-//             { once: true },
-//           );
-//         });
-
-//         observer.unobserve(entry.target);
-//       });
-//     },
-//     {
-//       threshold: 0.3,
-//     },
-//   );
-
-//   observer.observe(skillSection);
-// });
-
-document.addEventListener("DOMContentLoaded", () => {
+export default function initGraph() {
   const skillSection = document.querySelector(".section-tech");
   const skillBars = document.querySelectorAll(".skill-progress");
 
@@ -91,4 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   observer.observe(skillSection);
-});
+}

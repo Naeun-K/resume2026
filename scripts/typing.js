@@ -1,8 +1,10 @@
-const typingElement = document.querySelector(
-  ".section-profile-typing-container > strong",
-);
+export default function initTyping() {
+  const typingElement = document.querySelector(
+    ".section-profile-typing-container > strong",
+  );
 
-if (typingElement) {
+  if (!typingElement) return;
+
   const text = typingElement.textContent.trim();
 
   typingElement.textContent = "";
