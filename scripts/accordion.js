@@ -14,6 +14,6 @@ export default function initAboutAccordion() {
     const isOpen = accordion.classList.toggle("is-open");
 
     toggleButton.setAttribute("aria-expanded", String(isOpen));
-    buttonText.textContent = isOpen ? "인삿말 접기" : "인삿말 더보기";
+    buttonText.textContent = isOpen ? "소갯말 접기" : "소갯말 더보기";
   });
 }
