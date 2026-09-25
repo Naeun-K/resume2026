@@ -1,7 +1,7 @@
 # 💻 김나은 | 풀스택 개발자 포트폴리오
 
 > **"어제보다 더 발전하는 개발자"**  
-> Python 데이터 분석부터 Java 백엔드, 프론트엔드까지 아우르는 풀스택 개발자 김나은의 포트폴리오 웹사이트입니다.
+> 프론트엔드와 풀스택 개발 역량을 쌓아가고 있는 개발자 김나은의 포트폴리오입니다.
 
 ## 🔍 미리보기
 
@@ -20,14 +20,48 @@
 ## 📁 디렉토리 구조
 
 ```text
-├── index.html
-├── css/
-│     ├── reset.css
-│     └── style.css
+resume2026/
+├── dist/
+│   ├── bundle.js
+│   └── style.css
+│
 ├── images/
-│     ├── mbti.webp
-│     └── profile.webp
-└── README.md
+│   ├── 2nd-main.webp
+│   ├── 2nd-tech.webp
+│   ├── 3rd-main.webp
+│   ├── 3rd-tech-1.webp
+│   ├── 3rd-tech-2.webp
+│   ├── desktop-hero.webp
+│   ├── mbti.webp
+│   ├── mobile-hero.webp
+│   ├── profile.webp
+│   ├── python-gan.webp
+│   ├── python-pandas.webp
+│   ├── readme.webp
+│   └── tech-smart.webp
+│
+├── node_modules/
+│
+├── public/
+│   └── favicon.svg
+│
+├── scripts/
+│   ├── accordion.js
+│   ├── contact.js
+│   ├── graph.js
+│   ├── main.js
+│   ├── smoothScrollTo.js
+│   └── typing.js
+│
+├── styles/
+│   ├── reset.css
+│   └── style.css
+│
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── webpack.config.js
 ```
 
 ## ⚙️ 주요 기능 (Implementation Details)
@@ -43,6 +77,7 @@
 
 - 스킬 표시 막대그래프(Skills)
   - 보유 스킬 그래프화
+  - 그래프가 해당 기술의 percent만큼 증가하는 애니메이션 추가
   - 그래프 값을 그래프 내부 우측에 작성 -> 사용자 직관성 높임
 
 - 프로젝트(Projects)

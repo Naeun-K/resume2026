@@ -210,7 +210,7 @@ textarea:focus-visible {
   padding: 30px;
   background:
     linear-gradient(rgba(27, 48, 34, 0.2), rgba(27, 48, 34, 0.2)),
-    url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    url(../images/desktop-hero.webp);
   background-size: cover;
   background-position: center;
   border-radius: 50px;
@@ -776,7 +776,7 @@ li.tech-set > span:first-child {
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 미디어 쿼리 layout */
   .main-wrapper {
-    background-image: url(https://images.unsplash.com/photo-1669052700037-db884b37b2d9?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(../images/mobile-hero.webp);
     background-position: center;
   }
 
