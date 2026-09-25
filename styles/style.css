@@ -135,16 +135,17 @@ textarea:focus-visible {
 }
 
 .header-nav li:nth-child(2) {
-  background-color: #e7e3dd;
+  background-color: #e9e5df;
 }
 
 .header-nav li:nth-child(3) {
-  background-color: #cac5b1;
+  background-color: #d8d3c4;
 }
 
 .header-nav li:last-child {
-  background-color: #9c9888;
+  background-color: #c3beb0;
 }
+
 .header-nav li:hover {
   background-color: #f9f9f9;
 }
@@ -162,6 +163,7 @@ textarea:focus-visible {
 
   text-align: center;
   font-size: 1rem;
+  color: #333333;
 
   border-radius: 5px 5px 0 0;
 
@@ -572,7 +574,7 @@ li.tech-set > span:first-child {
 .short-tech-set {
   height: 45px;
   width: auto;
-  aspect-ratio: 1.66/1;
+  object-fit: contain;
 }
 
 .tech-img-wrapper {
