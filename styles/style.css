@@ -51,6 +51,30 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+/* required 오류 안내 메시지 */
+.field-error-message {
+  color: #d93025;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 오류가 발생한 input / textarea */
+.section-contact-input.input-error,
+.section-contact-textarea.input-error {
+  border-color: #d93025;
+}
+
+/* 오류 input에 focus 되었을 때 */
+.section-contact-input.input-error:focus,
+.section-contact-textarea.input-error:focus,
+.section-contact-input.input-error:focus-visible,
+.section-contact-textarea.input-error:focus-visible {
+  border-color: #d93025;
+  outline: 3px solid rgba(217, 48, 37, 0.75);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.2);
+}
+
 .header-nav .btn:hover {
   background-color: #f9f9f9;
   transform: translateY(8px) scale(1.05);
@@ -609,6 +633,9 @@ li.tech-set > span:first-child {
 }
 
 .section-contact-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1rem;
 }
 

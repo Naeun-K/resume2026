@@ -9,10 +9,142 @@ export default function initContact() {
   const submitButton = contactForm.querySelector(".section-contact-button");
   const statusMessage = contactForm.querySelector("#contact-status");
 
+  // required가 설정된 모든 입력 요소
+  const requiredFields = contactForm.querySelectorAll(
+    "input[required], textarea[required]",
+  );
+
+  /**
+   * 필드별 오류 메시지
+   */
+  const getErrorMessage = (field) => {
+    // required인데 값이 없는 경우
+    if (!field.value.trim()) {
+      switch (field.name) {
+        case "name":
+          return "이름을 입력해주세요.";
+
+        case "email":
+          return "이메일을 입력해주세요.";
+
+        case "title":
+          return "제목을 입력해주세요.";
+
+        case "message":
+          return "내용을 입력해주세요.";
+
+        default:
+          return "필수 입력 항목입니다.";
+      }
+    }
+
+    // 이메일 값은 있지만 형식이 잘못된 경우
+    if (field.type === "email" && !field.validity.valid) {
+      return "올바른 이메일 형식으로 입력해주세요.";
+    }
+
+    return "";
+  };
+
+  /**
+   * input과 연결된 label 찾기
+   */
+  const getFieldLabel = (field) => {
+    if (!field.id) return null;
+
+    return contactForm.querySelector(`label[for="${CSS.escape(field.id)}"]`);
+  };
+
+  /**
+   * 라벨 옆 오류 메시지 요소 가져오기
+   * 없으면 생성
+   */
+  const getErrorElement = (field) => {
+    const label = getFieldLabel(field);
+
+    if (!label) return null;
+
+    let errorMessage = label.querySelector(".field-error-message");
+
+    if (!errorMessage) {
+      errorMessage = document.createElement("span");
+
+      errorMessage.classList.add("field-error-message");
+      errorMessage.setAttribute("aria-live", "polite");
+
+      // 라벨 텍스트 바로 뒤에 추가
+      label.appendChild(errorMessage);
+    }
+
+    return errorMessage;
+  };
+
+  /**
+   * 필드 오류 표시
+   */
+  const showFieldError = (field, message) => {
+    const errorMessage = getErrorElement(field);
+
+    if (errorMessage) {
+      errorMessage.textContent = message;
+    }
+
+    field.classList.add("input-error");
+    field.setAttribute("aria-invalid", "true");
+  };
+
+  /**
+   * 필드 오류 제거
+   */
+  const clearFieldError = (field) => {
+    const label = getFieldLabel(field);
+    const errorMessage = label?.querySelector(".field-error-message");
+
+    if (errorMessage) {
+      errorMessage.textContent = "";
+    }
+
+    field.classList.remove("input-error");
+    field.removeAttribute("aria-invalid");
+  };
+
+  /**
+   * 개별 필드 검사
+   */
+  const validateField = (field) => {
+    const errorMessage = getErrorMessage(field);
+
+    if (errorMessage) {
+      showFieldError(field, errorMessage);
+      return false;
+    }
+
+    clearFieldError(field);
+
+    return true;
+  };
+
+  /**
+   * 브라우저 기본 validation 팝업 제거
+   */
+  contactForm.setAttribute("novalidate", "");
+
+  /**
+   * 에러가 표시된 이후 값을 입력하면
+   * 해당 필드의 에러 메시지 제거
+   */
+  requiredFields.forEach((field) => {
+    field.addEventListener("input", () => {
+      // 아직 에러가 표시되지 않았다면 아무것도 하지 않음
+      if (!field.classList.contains("input-error")) return;
+
+      // 값이 입력되면 다시 검사
+      validateField(field);
+    });
+  });
+
   /**
    * 문의 전송 결과 아이콘 생성
-   * success: 체크 아이콘
-   * error: X 아이콘
    */
   const createStatusIcon = (type) => {
     const svgNS = "http://www.w3.org/2000/svg";
@@ -20,17 +152,13 @@ export default function initContact() {
     const svg = document.createElementNS(svgNS, "svg");
     const path = document.createElementNS(svgNS, "path");
 
-    // SVG 공통 속성
     svg.setAttribute("width", "16");
     svg.setAttribute("height", "16");
     svg.setAttribute("viewBox", "0 0 16 16");
     svg.setAttribute("fill", "currentColor");
-
-    // 아이콘은 장식용이므로 스크린리더에서 제외
     svg.setAttribute("aria-hidden", "true");
 
     if (type === "success") {
-      // Bootstrap Icons - check-lg
       svg.classList.add("bi", "bi-check-lg");
 
       path.setAttribute(
@@ -38,7 +166,6 @@ export default function initContact() {
         "M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z",
       );
     } else if (type === "error") {
-      // Bootstrap Icons - x-lg
       svg.classList.add("bi", "bi-x-lg");
 
       path.setAttribute(
@@ -54,33 +181,21 @@ export default function initContact() {
 
   /**
    * 문의 전송 결과 메시지 표시
-   * innerHTML 대신 DOM API와 textContent를 사용
    */
   const setContactStatus = (type, message) => {
     if (!statusMessage) return;
 
-    // 기존 아이콘과 메시지 제거
     statusMessage.replaceChildren();
-
-    // 기존 상태 클래스 제거
     statusMessage.classList.remove("success", "error");
 
-    // 허용된 상태만 처리
     if (type !== "success" && type !== "error") return;
 
-    // 상태에 맞는 SVG 아이콘 생성
     const icon = createStatusIcon(type);
-
-    // 메시지 요소 생성
     const text = document.createElement("span");
 
-    // HTML로 해석하지 않고 순수 문자열로 삽입
     text.textContent = message;
 
-    // 성공/실패 상태 클래스 추가
     statusMessage.classList.add(type);
-
-    // 아이콘과 메시지를 상태 영역에 추가
     statusMessage.append(icon, text);
   };
 
@@ -94,26 +209,45 @@ export default function initContact() {
     statusMessage.classList.remove("success", "error");
   };
 
-  // Contact 폼 제출
+  /**
+   * Contact 폼 제출
+   */
   contactForm.addEventListener("submit", async (event) => {
-    // Formspree 페이지로 직접 이동하는 기본 submit 동작 방지
+    // Formspree 페이지 이동 방지
     event.preventDefault();
 
-    // HTML 기본 유효성 검사
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
+    let isValid = true;
+    let firstInvalidField = null;
+
+    /**
+     * 보내기 버튼을 눌렀을 때만
+     * 모든 required 항목 검사
+     */
+    requiredFields.forEach((field) => {
+      const fieldIsValid = validateField(field);
+
+      if (!fieldIsValid) {
+        isValid = false;
+
+        if (!firstInvalidField) {
+          firstInvalidField = field;
+        }
+      }
+    });
+
+    // required 항목 중 하나라도 문제가 있으면 전송하지 않음
+    if (!isValid) {
+      firstInvalidField?.focus();
       return;
     }
 
-    // 중복 전송 방지를 위해 버튼 비활성화
+    // 중복 전송 방지
     submitButton.disabled = true;
     submitButton.textContent = "전송 중...";
 
-    // 이전 성공/실패 메시지 제거
     clearContactStatus();
 
     try {
-      // 폼에 입력된 데이터를 FormData로 생성
       const formData = new FormData(contactForm);
 
       // Formspree endpoint로 문의 내용 전송
@@ -125,26 +259,27 @@ export default function initContact() {
         },
       });
 
-      // HTTP 응답이 성공 범위가 아니면 실패 처리
       if (!response.ok) {
         throw new Error("문의 전송에 실패했습니다.");
       }
 
-      // 전송 성공 메시지 표시
+      // 전송 성공
       setContactStatus("success", "문의가 정상적으로 전송되었습니다.");
 
-      // 성공한 경우 입력 내용 초기화
       contactForm.reset();
+
+      // 에러 상태 초기화
+      requiredFields.forEach((field) => {
+        clearFieldError(field);
+      });
     } catch (error) {
       console.error("문의 전송 실패:", error);
 
-      // 전송 실패 메시지 표시
       setContactStatus(
         "error",
         "문의 전송에 실패했습니다. 잠시 후 다시 시도해주세요.",
       );
     } finally {
-      // 성공/실패 여부와 관계없이 버튼 원상 복구
       submitButton.disabled = false;
       submitButton.textContent = "보내기";
     }
