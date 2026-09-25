@@ -11,6 +11,8 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    // Webpack이 출력하는 이미지 등의 asset 경로
+    assetModuleFilename: "images/[name][ext]",
   },
   module: {
     rules: [
