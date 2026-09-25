@@ -15,8 +15,8 @@
 ## ⚒️ 사용 기술 (Skills)
 
 ![Static Badge](https://img.shields.io/badge/HTML-43.6%25-orange)
-![Static Badge](https://img.shields.io/badge/CSS-35.6%25-purple)
-![Static Badge](https://img.shields.io/badge/JavaScript-20.8%25-yellow)
+![Static Badge](https://img.shields.io/badge/CSS-35.5%25-purple)
+![Static Badge](https://img.shields.io/badge/JavaScript-20.9%25-yellow)
 
 ## 📁 디렉토리 구조
 
@@ -38,6 +38,7 @@ resume2026/
 │   ├── profile.webp
 │   ├── python-gan.webp
 │   ├── python-pandas.webp
+│   ├── performance-improvement.webp
 │   ├── readme.webp
 │   └── tech-smart.webp
 │
@@ -186,3 +187,22 @@ JS가 실제 텍스트를 한 글자씩 추가하면서 여러 줄로 바뀌는 
 1. 구현 방식이 아주 간단하고 무료로 사용 가능
 2. 웹서비스 안에서만 문의를 정리할 수 있어 사용성이 훨씬 좋아짐
 3. 일반적인 HTTPS 통신을 사용하는 서비스이므로 브라우저의 경고나 확인창 등이 사라짐
+
+### 4. 발생한 에러
+
+성능적인 문제 발생
+![라이트하우스 성능 이미지](images/current-score.webp)
+
+#### 문제원인
+
+- background-image를 unsplash와 연결된 부분이 Cookie 관련 브라우저 경고 발생
+- 텍스트/아이콘의 전경색과 배경색 사이 명도 대비가 부족하다는 경고 발생
+- background-image를 캐시에서 재사용할 수 있게 하라는 경고 발생 -> 중요한 이미지이므로 우선적으로 다운받아야하는 부분 강조
+
+#### 문제해결
+
+![문제 해결 후 성능이 개선된 이미지](images/performance-improvement.webp)
+
+- 해당 이미지를 프로젝트 내 이미지로 변경
+- 배경 색을 좀더 밝게 글자색을 더 어둡게 변경
+- head 태그에 preload를 추가하여 fetchpriority="high"속성 따로 추가
