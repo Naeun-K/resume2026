@@ -1,3 +1,6 @@
+import "../styles/reset.css";
+import "../styles/style.css";
+
 import initGraph from "./graph.js";
 import initTyping from "./typing.js";
 import initContact from "./contact.js";
