@@ -3,19 +3,13 @@ export default function initSmoothScroll() {
 
   if (anchorLinks.length === 0) return;
 
-  // hover가 가능한 기기인지 확인
-  const canHover = window.matchMedia("(hover: hover)").matches;
-
-  const duration = 700;
+  // 빠르게 반응하도록 애니메이션 시간을 300ms로 설정
+  const duration = 300;
 
   const easeOutCubic = (progress) => {
     return 1 - Math.pow(1 - progress, 3);
   };
 
-  /**
-   * 부드럽게 스크롤 이동
-   * hover가 가능한 기기에서만 사용
-   */
   const smoothScrollTo = (targetPosition) => {
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
@@ -31,10 +25,7 @@ export default function initSmoothScroll() {
       const progress = Math.min(elapsedTime / duration, 1);
       const easedProgress = easeOutCubic(progress);
 
-      window.scrollTo({
-        top: startPosition + distance * easedProgress,
-        behavior: "instant",
-      });
+      window.scrollTo(0, startPosition + distance * easedProgress);
 
       if (progress < 1) {
         requestAnimationFrame(scroll);
@@ -61,25 +52,16 @@ export default function initSmoothScroll() {
 
       let targetPosition;
 
-      // project는 화면 상단에 위치
+      // project는 기존처럼 화면 상단
       if (targetId === "#project") {
         targetPosition = targetTop;
       } else {
-        // 나머지 콘텐츠는 화면 세로 중앙에 위치
+        // 나머지는 화면 세로 중앙
         targetPosition =
           targetTop - (window.innerHeight - targetRect.height) / 2;
       }
 
-      if (canHover) {
-        // 데스크톱 → 부드럽게 이동
-        smoothScrollTo(targetPosition);
-      } else {
-        // 모바일 → 애니메이션 없이 즉시 이동
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "instant",
-        });
-      }
+      smoothScrollTo(targetPosition);
     });
   });
 }

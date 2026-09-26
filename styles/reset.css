@@ -77,11 +77,7 @@
   margin: 0;
   padding: 0;
 }
-/* 스크롤 부드럽게 & a태그 이동시 상위부분 잘리지 않게 css 적용 */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px;
-}
+
 /* 바디태그 전체 적용 : 글자간격, 바탕색, 폰트, 글자색 */
 body {
   line-height: 1.6;
