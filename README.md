@@ -5,7 +5,7 @@
 
 ## 🔍 미리보기
 
-![히어로 이미지](images/readme.webp)
+![히어로 이미지](images/readme-main.webp)
 
 ## 🚀 배포 링크
 
