@@ -39,7 +39,7 @@ resume2026/
 │   ├── python-gan.webp
 │   ├── python-pandas.webp
 │   ├── performance-improvement.webp
-│   ├── readme.webp
+│   ├── readme-main.webp
 │   └── tech-smart.webp
 │
 ├── node_modules/
@@ -130,9 +130,6 @@ resume2026/
    - 화살표 스크롤 버튼에 aria-label 추가
 
 3. 애니메이션 효과
-
-- smoothScroll 애니메이션
-  : a태그 클릭하여 이동 시 부드럽게 움직일 수 있게 하는 애니메이션
 
 - graph 상승 애니메이션
   : 현재 창에 기술테크 그래프가 나오면 그래프가 상승하며 그래프값을 보여주는 애니메이션
