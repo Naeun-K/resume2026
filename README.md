@@ -14,9 +14,9 @@
 
 ## ⚒️ 사용 기술 (Skills)
 
-![Static Badge](https://img.shields.io/badge/HTML-44%25-orange)
-![Static Badge](https://img.shields.io/badge/CSS-35.7%25-purple)
-![Static Badge](https://img.shields.io/badge/JavaScript-20.3%25-yellow)
+![Static Badge](https://img.shields.io/badge/HTML-43%25-orange)
+![Static Badge](https://img.shields.io/badge/CSS-34.7%25-purple)
+![Static Badge](https://img.shields.io/badge/JavaScript-22.3%25-yellow)
 
 ## 📁 디렉토리 구조
 
@@ -58,6 +58,7 @@ resume2026/
 │   ├── reset.css
 │   └── style.css
 │
+├── .gitignore
 ├── index.html
 ├── package-lock.json
 ├── package.json

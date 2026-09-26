@@ -1,38 +1,21 @@
-export default function initLocateMiddle() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+/**
+ * 앵커 대상의 스크롤 위치를 계산합니다.
+ * - #project, #header: 화면 상단
+ * - 나머지 콘텐츠: 화면 세로 중앙
+ *
+ * @param {HTMLElement} target 이동할 대상 요소
+ * @param {string} targetId 대상의 ID
+ * @returns {number} 이동할 스크롤 위치
+ */
+export default function getTargetPosition(target, targetId) {
+  const targetRect = target.getBoundingClientRect();
+  const targetTop = targetRect.top + window.scrollY;
 
-  if (anchorLinks.length === 0) return;
+  // project와 header는 화면 상단에 위치
+  if (targetId === "#project" || targetId === "#header") {
+    return targetTop;
+  }
 
-  anchorLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const targetId = link.getAttribute("href");
-
-      if (!targetId || targetId === "#") return;
-
-      const target = document.querySelector(targetId);
-
-      if (!target) return;
-
-      event.preventDefault();
-
-      const targetRect = target.getBoundingClientRect();
-      const targetTop = targetRect.top + window.scrollY;
-
-      let targetPosition;
-
-      // project는 화면 상단에 위치
-      if (targetId === "#project") {
-        targetPosition = targetTop;
-      } else if (targetId === "#header") {
-        targetPosition = targetTop;
-      } else {
-        // 나머지 콘텐츠는 화면 세로 중앙에 위치
-        targetPosition =
-          targetTop - (window.innerHeight - targetRect.height) / 2;
-      }
-
-      // 애니메이션 없이 즉시 이동
-      window.scrollTo(0, targetPosition);
-    });
-  });
+  // 나머지 콘텐츠는 화면 세로 중앙에 위치
+  return targetTop - (window.innerHeight - targetRect.height) / 2;
 }

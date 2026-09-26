@@ -1,32 +1,44 @@
+import getTargetPosition from "./locate-middle";
+
 export default function initSmoothScroll() {
-  const anchorLinks = document.querySelectorAll(
-    'a[href^="#"]:not(.floating-icon-link)',
-  );
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
   if (anchorLinks.length === 0) return;
 
   // 스크롤 애니메이션 시간
-  const duration = 500;
+  const duration = 700;
 
-  // 자연스럽게 가속 후 감속
-  const easeInOutCubic = (progress) => {
-    return progress < 0.5
-      ? 4 * progress * progress * progress
-      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+  /**
+   * 빠르게 출발하고 목적지에 가까워질수록
+   * 자연스럽게 감속하는 easing
+   */
+  const easeOutCubic = (progress) => {
+    return 1 - Math.pow(1 - progress, 3);
   };
 
+  /**
+   * 계산된 위치까지 부드럽게 스크롤 이동
+   */
   const smoothScrollTo = (targetPosition) => {
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
-    const startTime = performance.now();
+
+    let startTime = null;
 
     const scroll = (currentTime) => {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
+
       const elapsedTime = currentTime - startTime;
       const progress = Math.min(elapsedTime / duration, 1);
+      const easedProgress = easeOutCubic(progress);
 
-      const easedProgress = easeInOutCubic(progress);
-
-      window.scrollTo(0, startPosition + distance * easedProgress);
+      window.scrollTo({
+        top: startPosition + distance * easedProgress,
+        left: 0,
+        behavior: "instant",
+      });
 
       if (progress < 1) {
         requestAnimationFrame(scroll);
@@ -48,9 +60,10 @@ export default function initSmoothScroll() {
 
       event.preventDefault();
 
-      const targetPosition =
-        target.getBoundingClientRect().top + window.scrollY;
+      // locate-middle.js에서 목적지 위치 계산
+      const targetPosition = getTargetPosition(target, targetId);
 
+      // 계산된 위치까지 부드럽게 이동
       smoothScrollTo(targetPosition);
     });
   });
