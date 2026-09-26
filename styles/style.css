@@ -29,13 +29,13 @@
 /* -- 버튼 애니메이션 추가 -- */
 .btn {
   transition:
-    transform 0.5s ease,
-    box-shadow 0.5s ease,
-    background-color 0.5s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .btn-letter {
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .btn-letter:hover {
@@ -296,10 +296,6 @@ textarea:focus-visible {
   height: 20px;
   vertical-align: middle;
   margin: 0 5px;
-}
-
-.project-tech-context::before {
-  content: "- ";
 }
 
 .section-profile-img {

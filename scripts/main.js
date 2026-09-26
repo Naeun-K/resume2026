@@ -5,12 +5,12 @@ import initGraph from "./graph.js";
 import initTyping from "./typing.js";
 import initContact from "./contact.js";
 import initAboutAccordion from "./accordion.js";
-import initSmoothScroll from "./smoothScrollTo.js";
+import initLocateMiddle from "./locate-middle.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initGraph();
-  initSmoothScroll();
   initTyping();
   initContact();
   initAboutAccordion();
+  initLocateMiddle();
 });
