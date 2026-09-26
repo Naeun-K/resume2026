@@ -23,7 +23,7 @@ export default function initSmoothScroll() {
     let startTime = null;
 
     const scroll = (currentTime) => {
-      if (!startTime) {
+      if (startTime === null) {
         startTime = currentTime;
       }
 
@@ -31,7 +31,10 @@ export default function initSmoothScroll() {
       const progress = Math.min(elapsedTime / duration, 1);
       const easedProgress = easeOutCubic(progress);
 
-      window.scrollTo(0, startPosition + distance * easedProgress);
+      window.scrollTo({
+        top: startPosition + distance * easedProgress,
+        behavior: "instant",
+      });
 
       if (progress < 1) {
         requestAnimationFrame(scroll);
@@ -51,8 +54,6 @@ export default function initSmoothScroll() {
 
       if (!target) return;
 
-      // 기본 앵커 이동 방지
-      // 모바일에서도 가운데 위치 계산을 적용해야 하므로 필요
       event.preventDefault();
 
       const targetRect = target.getBoundingClientRect();
@@ -60,21 +61,24 @@ export default function initSmoothScroll() {
 
       let targetPosition;
 
-      // project는 기존처럼 화면 상단에 위치
+      // project는 화면 상단에 위치
       if (targetId === "#project") {
         targetPosition = targetTop;
       } else {
-        // 나머지 콘텐츠는 모든 기기에서 화면 가운데 위치
+        // 나머지 콘텐츠는 화면 세로 중앙에 위치
         targetPosition =
           targetTop - (window.innerHeight - targetRect.height) / 2;
       }
 
       if (canHover) {
-        // PC 등 hover 가능 기기 → 부드럽게 이동
+        // 데스크톱 → 부드럽게 이동
         smoothScrollTo(targetPosition);
       } else {
-        // 모바일 등 hover 불가능 기기 → 즉시 이동
-        window.scrollTo(0, targetPosition);
+        // 모바일 → 애니메이션 없이 즉시 이동
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "instant",
+        });
       }
     });
   });
