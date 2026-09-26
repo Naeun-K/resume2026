@@ -168,10 +168,10 @@ textarea:focus-visible {
   border-radius: 5px 5px 0 0;
 
   transition:
-    color 0.3s,
-    height 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    font-size 0.3s ease,
-    font-weight 0.3s ease;
+    color 0.2s,
+    height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    font-size 0.2s ease,
+    font-weight 0.2s ease;
 }
 
 .header-nav-item:hover {
@@ -718,8 +718,8 @@ li.tech-set > span:first-child {
   z-index: 9999;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition:
-    transform 0.3s ease,
-    background-color 0.3s ease;
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .floating-icon:hover {
