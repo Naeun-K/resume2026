@@ -14,9 +14,9 @@
 
 ## ⚒️ 사용 기술 (Skills)
 
-![Static Badge](https://img.shields.io/badge/HTML-43.6%25-orange)
-![Static Badge](https://img.shields.io/badge/CSS-35.5%25-purple)
-![Static Badge](https://img.shields.io/badge/JavaScript-20.9%25-yellow)
+![Static Badge](https://img.shields.io/badge/HTML-44%25-orange)
+![Static Badge](https://img.shields.io/badge/CSS-35.7%25-purple)
+![Static Badge](https://img.shields.io/badge/JavaScript-20.3%25-yellow)
 
 ## 📁 디렉토리 구조
 
@@ -42,7 +42,6 @@ resume2026/
 │   ├── readme-main.webp
 │   └── tech-smart.webp
 │
-├── node_modules/
 │
 ├── public/
 │   └── favicon.svg
@@ -151,7 +150,7 @@ resume2026/
 
 #### 문제해결
 
-모바일 화면 시 즐바꿈 가능하게 변경
+모바일 화면 시 줄바꿈 가능하게 변경
 
 ### 2. 발생한 에러
 
