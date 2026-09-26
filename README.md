@@ -23,18 +23,21 @@
 ```text
 resume2026/
 ├── dist/
+│   ├── images/
+│   │   ├── desktop-hero.webp
+│   │   └── mobile-hero.webp
 │   ├── bundle.js
 │   └── style.css
 │
 ├── images/
+│   ├── desktop-hero.webp
+│   ├── mobile-hero.webp
 │   ├── 2nd-main.webp
 │   ├── 2nd-tech.webp
 │   ├── 3rd-main.webp
 │   ├── 3rd-tech-1.webp
 │   ├── 3rd-tech-2.webp
-│   ├── desktop-hero.webp
 │   ├── mbti.webp
-│   ├── mobile-hero.webp
 │   ├── profile.webp
 │   ├── python-gan.webp
 │   ├── python-pandas.webp
@@ -51,7 +54,8 @@ resume2026/
 │   ├── contact.js
 │   ├── graph.js
 │   ├── main.js
-│   ├── smoothScrollTo.js
+│   ├── scroll-smooth.js
+│   ├── locate-middle.js
 │   └── typing.js
 │
 ├── styles/
