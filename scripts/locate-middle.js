@@ -1,7 +1,5 @@
 export default function initLocateMiddle() {
-  const anchorLinks = document.querySelectorAll(
-    'a[href^="#"]:not(.floating-icon-link)',
-  );
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
   if (anchorLinks.length === 0) return;
 
@@ -24,6 +22,8 @@ export default function initLocateMiddle() {
 
       // project는 화면 상단에 위치
       if (targetId === "#project") {
+        targetPosition = targetTop;
+      } else if (targetId === "#header") {
         targetPosition = targetTop;
       } else {
         // 나머지 콘텐츠는 화면 세로 중앙에 위치
