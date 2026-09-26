@@ -6,6 +6,7 @@ import initTyping from "./typing.js";
 import initContact from "./contact.js";
 import initLocateMiddle from "./locate-middle.js";
 import initAboutAccordion from "./accordion.js";
+import initSmoothScroll from "./scroll-smooth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initGraph();
@@ -13,4 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initContact();
   initLocateMiddle();
   initAboutAccordion();
+  initSmoothScroll;
 });
