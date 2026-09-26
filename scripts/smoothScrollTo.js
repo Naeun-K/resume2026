@@ -1,9 +1,14 @@
 export default function initSmoothScroll() {
+  // hover가 불가능한 터치 기기에서는 커스텀 스크롤 효과를 사용하지 않음
+  const canHover = window.matchMedia("(hover: hover)").matches;
+
+  if (!canHover) return;
+
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
   if (anchorLinks.length === 0) return;
 
-  const duration = 1100;
+  const duration = 700;
 
   const easeOutCubic = (progress) => {
     return 1 - Math.pow(1 - progress, 3);
