@@ -452,60 +452,248 @@ textarea:focus-visible {
   font-weight: 600;
 }
 
-/* --------------------------프로젝트 설명칸------------------------ */
-.project-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-  padding-top: 20px;
+/* PROJECTS — 데스크톱 기본, 태블릿 상속, 모바일 세로 배치 */
+#project.section-project.card {
+  --project-color: #0c3934;
+  --project-border: #d3d9db;
+  padding: 28px;
+  box-sizing: border-box;
 }
 
-.project-info {
-  display: flex;
-  gap: 10px;
-  padding: 10px 0 10px 20px;
-  font-size: 0.9rem;
-  flex-wrap: wrap;
+#project .small-title {
+  margin: 0;
+  padding: 0 0 20px;
+  color: var(--project-color);
 }
 
-.mobile-array {
-  flex-wrap: nowrap;
-  display: flex;
-  gap: 10px;
+#project .project-group + .project-group {
+  margin-top: 24px;
 }
 
-.project-period::before {
-  content: "|";
-  margin-right: 10px;
+#project .project-group-title {
+  margin: 0 0 12px;
+  color: var(--project-color);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.project-count::after {
-  content: ")";
-}
-
-.project-count::before {
-  content: "(";
-}
-
-.project-description {
-  font-size: 1rem;
-  padding-left: 30px;
+#project .project-wrapper {
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+#project .project-item {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--project-border);
+  border-radius: 12px;
+}
+
+/* WEB PROJECTS */
+#project .project-item--web {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "preview heading"
+    "preview tech";
+  gap: 12px 22px;
+  align-items: start;
+}
+
+#project .project-heading {
+  grid-area: heading;
+  min-width: 0;
+}
+
+#project .project-title {
+  margin: 0 0 6px;
+  color: var(--project-color);
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.4;
   word-break: keep-all;
 }
 
-.project-description > li {
-  padding-left: 20px;
-  text-indent: -20px;
-}
-
-.project-description > li::before {
-  content: "-";
+#project .project-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 9px;
   padding: 0;
   margin: 0;
-  margin-right: 10px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+#project .project-info p {
+  margin: 0;
+  word-break: keep-all;
+}
+
+#project .project-info p + p {
+  border-left: 1px solid currentColor;
+  padding-left: 9px;
+  white-space: nowrap;
+}
+
+#project .project-preview {
+  grid-area: preview;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid var(--project-border);
+  border-radius: 8px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+#project .project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (hover: hover) {
+  #project .project-preview:hover {
+    border-color: var(--project-color);
+    transform: translateY(-2px);
+  }
+}
+
+/* 사용기술 이미지: 가용 너비 안에서 비율 유지 */
+#project .project-tech {
+  grid-area: tech;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 0 0;
+  border: 0;
+  border-top: 1px solid var(--project-border);
+}
+
+#project .project-tech-label {
+  flex: 0 0 auto;
+  color: var(--project-color);
+  font-size: 0.9rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+#project .project-tech-image {
+  display: block;
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
+  height: 64px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+#project .project-tech--compact .project-tech-image {
+  flex: 0 1 auto;
+  width: auto;
+  max-width: min(45%, 150px);
+  height: 54px;
+}
+
+/* OTHER PROJECTS */
+#project .project-item--other {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-areas: "description tech";
+  gap: 22px;
+}
+
+#project .project-copy {
+  grid-area: description;
+  min-width: 0;
+}
+
+#project .project-description {
+  display: block;
+  margin: 8px 0 0;
+  padding: 0 0 0 18px;
+  list-style: disc outside;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+#project .project-description > li {
+  display: list-item;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style: disc outside;
+}
+
+#project .project-description > li::before {
+  content: none;
+}
+
+#project .project-description > li::marker {
+  color: var(--project-color);
+}
+
+#project .project-item--other .project-tech {
+  align-self: stretch;
+  padding: 0 0 0 20px;
+  border-top: 0;
+  border-left: 1px solid var(--project-border);
+}
+
+/* 모바일만 카드 내부를 세로형으로 변경 */
+@media (max-width: 767px) {
+  #project.section-project.card {
+    padding: 20px 12px;
+  }
+
+  #project .project-item--web,
+  #project .project-item--other {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  #project .project-title {
+    font-size: 1.05rem;
+  }
+
+  #project .project-info {
+    font-size: 0.78rem;
+  }
+
+  #project .project-tech,
+  #project .project-item--other .project-tech {
+    padding: 10px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--project-border);
+  }
+
+  #project .project-tech-image {
+    height: 52px;
+  }
+
+  #project .project-tech--compact .project-tech-image {
+    height: 46px;
+  }
 }
 
 /* contact와 awards & licences 두개 묶음 */
@@ -519,74 +707,6 @@ textarea:focus-visible {
 .section-award-license,
 .section-contact {
   scroll-margin-top: 100px;
-}
-
-.site-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  color: #222;
-  transition:
-    transform 0.3s,
-    background-color 0.3s,
-    border 0.3s;
-}
-
-.site-card:hover {
-  transform: scale(1.01);
-  background-color: #f5f5f5;
-  border: 1px solid #1b3022;
-}
-
-.site-card img {
-  object-fit: cover;
-}
-
-.site-card p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.site-card .card-desc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-li.tech-set > span:first-child {
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-
-.short-tech-set {
-  height: 45px;
-  width: auto;
-  object-fit: contain;
-}
-
-.tech-img-wrapper {
-  width: 200px;
-}
-
-.project-description > li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-indent: 0;
-}
-
-.project-description > li::before {
-  margin-right: 0;
-  flex-shrink: 0;
 }
 
 /* --------------------------- 상과 자격증 ----------------------- */
@@ -994,47 +1114,6 @@ li.tech-set > span:first-child {
     grid-template-columns: 1fr 2fr;
   }
 
-  /* 모바일 미디어 쿼리 프로젝트 파트 */
-  .project-wrapper {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .project-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-left: 10px;
-    font-size: 0.9rem;
-  }
-
-  .mobile-array {
-    gap: 0;
-  }
-
-  .project-role::after {
-    display: none;
-  }
-
-  .project-count::before {
-    display: none;
-  }
-
-  .project-count::after {
-    display: none;
-  }
-
-  .project-period::before {
-    margin-left: 10px;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-    padding-left: 15px;
-  }
-
   /* 모바일 미디어 쿼리( 두 섹션 묶음 ) */
   .two-sections-wrapper {
     display: flex;
@@ -1092,14 +1171,6 @@ li.tech-set > span:first-child {
 
   .section-main-wrapper::after {
     display: none;
-  }
-
-  .project-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    padding-left: 50px;
-    gap: 30px;
   }
 
   .award-license-info {
