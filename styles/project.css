@@ -42,7 +42,10 @@
 }
 
 /* WEB PROJECTS */
+
 #project .project-item--web {
+  position: relative;
+  cursor: pointer;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   grid-template-rows: auto 1fr;
@@ -51,6 +54,18 @@
     "preview tech";
   gap: 12px 22px;
   align-items: start;
+
+  transition: border-color 0.2s;
+}
+
+#project .project-link {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 #project .project-heading {
@@ -99,7 +114,9 @@
   overflow: hidden;
   border: 1px solid var(--project-border);
   border-radius: 8px;
-  transition: border-color 0.3s, transform 0.3s;
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
 }
 
 #project .project-preview img {
@@ -112,7 +129,7 @@
 }
 
 @media (hover: hover) {
-  #project .project-preview:hover {
+  #project .project-link:hover .project-preview {
     border-color: var(--project-color);
     transform: translateY(-2px);
   }
